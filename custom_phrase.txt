@@ -1,0 +1,35 @@
+# Rime table
+# coding: utf-8
+#@/db_name  custom_phrase.txt
+#@/db_type	tabledb
+
+# 码表各字段以制表符（Tab）分隔
+# 顺序为：文字 编码  权重（决定重码的次序、可选）
+
+Rime	rime	4
+中州韻輸入法引擎	rime	3
+鼠须管	rime	3
+Rime Input Method Engine	rime	2
+https://rime.im/	rime	2
+Squirrel	rime	1
+
+# OS
+OS	os
+Android	and
+Windows	win
+Linux	linux
+Unix	unix
+iOS	ios
+
+# 符号
+⌘	cmd
+⌃	ctl
+⌥	opt
+⇧	shift
+
+# 常见英文缩写
+GTD	gtd
+Getting Things Done	gtd
+搞定	gtd
+
+又双叒叕	yyy

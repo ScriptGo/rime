@@ -1,0 +1,18 @@
+# Rime Dictionary
+# 
+
+---
+name: extended
+version: "2022.10.1"
+sort: by_weight
+
+# vocabulary: essay-zh-hans
+# use_preset_vocabulary: true
+
+use_preset_vocabulary: false # 禁用默认的“八股文”词库及词频系统,防止候选词中出现繁体字、方框字
+
+import_tables:
+  # - luna_pinyin #默认词库,如需启用请取消注释
+  - pinyin_simp
+  - zhwiki
+  - moegirl
