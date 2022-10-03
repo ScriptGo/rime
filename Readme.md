@@ -1,4 +1,4 @@
-# ManjaroLinux 下 Rime 的配置
+# Manjaro下 Rime 的配置
 
 ## 安装rime
 
@@ -25,13 +25,13 @@
 
 
 | 配置文件             | 配置说明                             |
-| -------------------- | ------------------------------------ |
-| default.custom.yaml  | 快捷键、候选栏、输入方案选单等等定义 |
+| -------------------- | ----------------------------------|
+| default.custom.yaml  | 快捷键、候选栏、输入方案选单等定         |
 | extended.dict.yaml   | 扩展词库定义                         |
-| flypy.schema.ymal    | 小鹤双拼方案                         |
+| flypy.schema.ymal    | 自定义小鹤双拼方案                    |
 | squirrel.custom.yaml | 外观样式定义                         |
 | symbols.custom.yaml  | 标点符号定义                         |
-|                      |                                      |
+| custom_phrase.txt    | 自定义短语                           |
 
 ## 参考/致谢
 
