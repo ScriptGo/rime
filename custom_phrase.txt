@@ -17,8 +17,8 @@ Squirrel	rime	1
 OS	os
 Android	and
 Windows	win
-Linux	linux
-Unix	unix
+Linux	lin
+Unix	uni
 iOS	ios
 
 # 符号
@@ -27,9 +27,54 @@ iOS	ios
 ⌥	opt
 ⇧	shift
 
-# 常见英文缩写
+# 英文缩写
+application programming interface	api
+API	api
+应用程序接口	api
+
+by the way	btw
+BTW	btw
+顺便说一句		btw
+顺带一提	btw
+
+Creative Commons	cc
+CC BY-SA 3.0	cc
+知识共享	cc
+
+GNU General Public License	gpl
+GPL	gpl
+GNU通用公共许可协议	gpl
+
+GNU's Not Unix	gnu
+GNU	gnu
+
 GTD	gtd
 Getting Things Done	gtd
 搞定	gtd
+
+Software Development Kit	SDK
+软件开发工具包	SDK
+SDK	sdk
+
+Integrated Development Environment	IDE
+IDE	ide
+集成开发环境	IDE
+
+KISS	kiss
+Keep It Simple, Stupid	kiss
+
+GUI	gui
+Graphical User Interface	gui
+图形用户界面	gui
+
+CLI	cli
+Command Line Interface	cli
+命令行用户界面	cli
+
+TUI	tui
+Terminal User Interface	tui
+终端用户界面	tui
+Text-based User Interface	tui
+基于文本的用户界面	tui
 
 又双叒叕	yyy
