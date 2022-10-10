@@ -26,7 +26,7 @@
 
 | 配置文件             | 配置说明                             |
 | -------------------- | ----------------------------------|
-| default.custom.yaml  | 快捷键、候选栏、输入方案选单等定         |
+| default.custom.yaml  | 快捷键、候选栏、输入方案选单等          |
 | extended.dict.yaml   | 扩展词库定义                         |
 | flypy.schema.ymal    | 自定义小鹤双拼方案                    |
 | symbols.custom.yaml  | 标点符号定义                         |
