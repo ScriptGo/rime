@@ -26,10 +26,10 @@
 
 | 配置文件             | 配置说明                             |
 | -------------------- | ----------------------------------|
-| default.custom.yaml  | 快捷键、候选栏、输入方案选单等          |
-| extended.dict.yaml   | 扩展词库定义                         |
+| default.custom.yaml  | 输入方案、候选栏、快捷键等             |
+| extended.dict.yaml   | 扩展词库                           |
 | flypy.schema.ymal    | 自定义小鹤双拼方案                    |
-| symbols.custom.yaml  | 标点符号定义                         |
+| symbols.custom.yaml  | 标点符号                           |
 | custom_phrase.txt    | 自定义短语                           |
 
 ## 参考/致谢

@@ -41,6 +41,15 @@ Creative Commons	cc
 CC BY-SA 3.0	cc
 知识共享	cc
 
+Do It Yourself	diy
+DIY	diy
+自己动手做		diy
+亲力亲为	diy
+
+DRY	dry
+Don't repeat yourself	dry
+不要重复你自己	dry
+
 GNU General Public License	gpl
 GPL	gpl
 GNU通用公共许可协议	gpl
