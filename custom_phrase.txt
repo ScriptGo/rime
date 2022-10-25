@@ -86,4 +86,7 @@ Terminal User Interface	tui
 Text-based User Interface	tui
 基于文本的用户界面	tui
 
+VIP	vip
+贵宾	vip
+
 又双叒叕	yyy
