@@ -88,5 +88,15 @@ Text-based User Interface	tui
 
 VIP	vip
 贵宾	vip
+Very Important Person	vip
+
+PTSD	ptsd
+Post-traumatic stress disorder	ptsd
+创伤后应激障碍	ptsd
+
+POC	poc
+Proof of concept	poc
+为观点提供证据	poc
+概念验证	poc
 
 又双叒叕	yyy
