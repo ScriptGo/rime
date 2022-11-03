@@ -1,4 +1,4 @@
-# Manjaro下 Rime 的配置
+# Manjaro下 Rime配置
 
 ## 安装rime
 
@@ -17,12 +17,12 @@
 
 
 ## 配置文件路径
+
    1. `~/.config/fcitx5`
-   2. `~/.local/share/fcitx5`/rime
+   2. `~/.local/share/fcitx5/rime`
 
 
 ## 配置文件说明
-
 
 | 配置文件             | 配置说明                             |
 | -------------------- | ----------------------------------|
@@ -31,6 +31,7 @@
 | flypy.schema.ymal    | 自定义小鹤双拼方案                    |
 | symbols.custom.yaml  | 标点符号                           |
 | custom_phrase.txt    | 自定义短语                           |
+
 
 ## 参考/致谢
 
