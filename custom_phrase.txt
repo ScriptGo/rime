@@ -41,6 +41,10 @@ Creative Commons	cc
 CC BY-SA 3.0	cc
 知识共享	cc
 
+CRUD	crud
+增删查改	crud
+创读更删	crud
+
 Do It Yourself	diy
 DIY	diy
 自己动手做		diy
