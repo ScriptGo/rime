@@ -98,15 +98,28 @@ PTSD	ptsd
 Post-traumatic stress disorder	ptsd
 创伤后应激障碍	ptsd
 
-POC	poc
+PoC	poc
+概念验证	poc
 Proof of concept	poc
 为观点提供证据	poc
-概念验证	poc
 
 TL;DR	tldr
 tl;dr	tldr
 too long; didn't read	tldr
 太长不看	tldr
 长话短说	tldr
+
+UGC	ugc
+User Generated Content	ugc
+用户创造内容	ugc
+User Generated Cumber	ugc
+用户创造麻烦	ugc
+
+SLOC	sloc
+Source lines of code	sloc
+源代码行数		sloc
+LOC	loc
+lines of code	loc
+程序行数	loc
 
 又双叒叕	yyy
