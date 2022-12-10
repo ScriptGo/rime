@@ -53,6 +53,9 @@ DIY	diy
 DRY	dry
 Don't repeat yourself	dry
 不要重复你自己	dry
+DSL	dsl
+领域特定语言	dsl
+domain-specific language	dsl
 
 GNU General Public License	gpl
 GPL	gpl
@@ -110,9 +113,9 @@ too long; didn't read	tldr
 长话短说	tldr
 
 UGC	ugc
-User Generated Content	ugc
+user-generated content	ugc
 用户创造内容	ugc
-User Generated Cumber	ugc
+user-generated cumber	ugc
 用户创造麻烦	ugc
 
 SLOC	sloc
