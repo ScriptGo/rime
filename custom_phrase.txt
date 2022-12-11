@@ -6,12 +6,12 @@
 # 码表各字段以制表符（Tab）分隔
 # 顺序为：文字 编码  权重（决定重码的次序、可选）
 
-Rime	rime	4
-中州韻輸入法引擎	rime	3
-鼠须管	rime	3
-Rime Input Method Engine	rime	2
-https://rime.im/	rime	2
-Squirrel	rime	1
+Rime	rime
+中州韻輸入法引擎	rime
+鼠须管	rime
+Rime Input Method Engine	rime
+https://rime.im/	rime
+Squirrel	rime
 
 # OS
 OS	os
@@ -26,6 +26,8 @@ iOS	ios
 ⌃	ctl
 ⌥	opt
 ⇧	shift
+
+################################################################################
 
 # 英文缩写
 application programming interface	api
@@ -124,5 +126,40 @@ Source lines of code	sloc
 LOC	loc
 lines of code	loc
 程序行数	loc
+
+FYI	fyi
+供你参考	fyi
+For Your Information	fyi
+
+FAQ	faq
+常见问题	faq
+Frequently Asked Question	faq
+
+PS	ps
+附言	ps
+Photoshop	ps
+PostScript	ps
+
+TBD	tbd
+待决定	tbd
+待商议	tbd
+To Be Determined	tbd
+
+OOO	ooo
+不在办公室		ooo
+没上班	ooo
+Out of Office	ooo
+
+CC	cc
+抄送	cc
+carbon copy	cc
+
+BCC	bcc
+隐秘抄送	bcc
+blind carbon copy	bcc
+
+NSFW	nsfw
+不适于工作场所	nsfw
+Not Safe For Work	nsfw
 
 又双叒叕	yyy
