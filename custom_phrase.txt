@@ -55,13 +55,14 @@ DIY	diy
 DRY	dry
 Don't repeat yourself	dry
 不要重复你自己	dry
+
 DSL	dsl
 领域特定语言	dsl
 domain-specific language	dsl
 
-GNU General Public License	gpl
 GPL	gpl
 GNU通用公共许可协议	gpl
+GNU General Public License	gpl
 
 GNU's Not Unix	gnu
 GNU	gnu
@@ -70,13 +71,13 @@ GTD	gtd
 Getting Things Done	gtd
 搞定	gtd
 
-Software Development Kit	SDK
 软件开发工具包	SDK
 SDK	sdk
+Software Development Kit	SDK
 
-Integrated Development Environment	IDE
 IDE	ide
 集成开发环境	IDE
+Integrated Development Environment	IDE
 
 KISS	kiss
 Keep It Simple, Stupid	kiss
@@ -110,9 +111,9 @@ Proof of concept	poc
 
 TL;DR	tldr
 tl;dr	tldr
-too long; didn't read	tldr
 太长不看	tldr
 长话短说	tldr
+too long; didn't read	tldr
 
 UGC	ugc
 user-generated content	ugc
@@ -123,9 +124,14 @@ user-generated cumber	ugc
 SLOC	sloc
 Source lines of code	sloc
 源代码行数		sloc
+
 LOC	loc
-lines of code	loc
 程序行数	loc
+lines of code	loc
+
+LSP	lsp
+语言服务器协议	lsp
+Language Server Protocol	lsp
 
 FYI	fyi
 供你参考	fyi
