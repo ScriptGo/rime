@@ -26,18 +26,115 @@ iOS	ios
 ⌃	ctl
 ⌥	opt
 ⇧	shift
+↩︎	enter
+⇥	tab
 
 ################################################################################
-
 # 英文缩写
-application programming interface	api
-API	api
-应用程序接口	api
 
-by the way	btw
 BTW	btw
+by the way	btw
 顺便说一句		btw
 顺带一提	btw
+
+BDFL	bdfl
+Benevolent Dictator For Life	bdfl
+终身仁慈独裁者	bdfl
+
+BCC	bcc
+blind carbon copy	bcc
+隐秘抄送	bcc
+
+CC	cc
+carbon copy	cc
+抄送	cc
+
+CES	ces
+Consumer Electronics Show	ces
+消费电子展		ces
+
+DIY	diy
+Do It Yourself	diy
+自己动手做		diy
+亲力亲为	diy
+
+DRY	dry
+Don't repeat yourself	dry
+不要重复你自己	dry
+
+VIP	vip
+Very Important Person	vip
+贵宾	vip
+
+PTSD	ptsd
+Post-traumatic stress disorder	ptsd
+创伤后应激障碍	ptsd
+
+PoC	poc
+Proof of concept	poc
+概念验证	poc
+为观点提供证据	poc
+
+TL;DR	tldr
+tl;dr	tldr
+too long; didn't read	tldr
+太长不看	tldr
+长话短说	tldr
+
+UGC	ugc
+user-generated content	ugc
+用户创造内容	ugc
+user-generated cumber	ugc
+用户创造麻烦	ugc
+
+
+FYI	fyi
+For Your Information	fyi
+供你参考	fyi
+
+FAQ	faq
+Frequently Asked Question	faq
+常见问题	faq
+
+PS	ps
+附言	ps
+Photoshop	ps
+PostScript	ps
+
+TBD	tbd
+To Be Determined	tbd
+待决定	tbd
+待商议	tbd
+
+OOO	ooo
+Out of Office	ooo
+不在办公室		ooo
+没上班	ooo
+
+NSFW	nsfw
+Not Safe For Work	nsfw
+不适于工作场所	nsfw
+
+R.I.P.	rip
+Requiescat in pace	rip
+Rest in peace	rip
+安息	rip
+
+RFC	rfc
+Request for Comments	rfc
+请求意见稿		rfc
+意见征求	rfc
+请求评论	rfc
+
+EDA	eda
+Exploratory Data Analysis	eda
+探索性数据分析	eda
+################################################################################
+# 计算机
+
+API	api
+application programming interface	api
+应用程序接口	api
 
 Creative Commons	cc
 CC BY-SA 3.0	cc
@@ -47,37 +144,28 @@ CRUD	crud
 增删查改	crud
 创读更删	crud
 
-Do It Yourself	diy
-DIY	diy
-自己动手做		diy
-亲力亲为	diy
-
-DRY	dry
-Don't repeat yourself	dry
-不要重复你自己	dry
-
 DSL	dsl
-领域特定语言	dsl
 domain-specific language	dsl
+领域特定语言	dsl
 
 GPL	gpl
-GNU通用公共许可协议	gpl
 GNU General Public License	gpl
+GNU通用公共许可协议	gpl
 
-GNU's Not Unix	gnu
 GNU	gnu
+GNU's Not Unix	gnu
 
 GTD	gtd
 Getting Things Done	gtd
 搞定	gtd
 
-软件开发工具包	SDK
 SDK	sdk
 Software Development Kit	SDK
+软件开发工具包	SDK
 
 IDE	ide
-集成开发环境	IDE
 Integrated Development Environment	IDE
+集成开发环境	IDE
 
 KISS	kiss
 Keep It Simple, Stupid	kiss
@@ -96,76 +184,33 @@ Terminal User Interface	tui
 Text-based User Interface	tui
 基于文本的用户界面	tui
 
-VIP	vip
-贵宾	vip
-Very Important Person	vip
-
-PTSD	ptsd
-Post-traumatic stress disorder	ptsd
-创伤后应激障碍	ptsd
-
-PoC	poc
-概念验证	poc
-Proof of concept	poc
-为观点提供证据	poc
-
-TL;DR	tldr
-tl;dr	tldr
-太长不看	tldr
-长话短说	tldr
-too long; didn't read	tldr
-
-UGC	ugc
-user-generated content	ugc
-用户创造内容	ugc
-user-generated cumber	ugc
-用户创造麻烦	ugc
-
 SLOC	sloc
-Source lines of code	sloc
 源代码行数		sloc
+Source lines of code	sloc
 
 LOC	loc
-程序行数	loc
 lines of code	loc
+程序行数	loc
 
 LSP	lsp
-语言服务器协议	lsp
 Language Server Protocol	lsp
+语言服务器协议	lsp
 
-FYI	fyi
-供你参考	fyi
-For Your Information	fyi
+REPL	repl
+Read-Eval-Print Loop	repl
+读取-求值-输出 循环	repl
 
-FAQ	faq
-常见问题	faq
-Frequently Asked Question	faq
+URI	uri
+Uniform Resource Identifier	uri
+统一资源标志符	uri
 
-PS	ps
-附言	ps
-Photoshop	ps
-PostScript	ps
+URN	urn
+Uniform Resource Name	urn
+统一资源名称	urn
 
-TBD	tbd
-待决定	tbd
-待商议	tbd
-To Be Determined	tbd
+URL	url
+Uniform Resource Locator	url
+统一资源定位符	url
 
-OOO	ooo
-不在办公室		ooo
-没上班	ooo
-Out of Office	ooo
-
-CC	cc
-抄送	cc
-carbon copy	cc
-
-BCC	bcc
-隐秘抄送	bcc
-blind carbon copy	bcc
-
-NSFW	nsfw
-不适于工作场所	nsfw
-Not Safe For Work	nsfw
-
+################################################################################
 又双叒叕	yyy
