@@ -11,7 +11,6 @@
 
    ```bash
    sudo pacman -S rime-double-pinyin
-   sudo pacman -S fcitx5-pinyin-zhwiki-rime
    sudo pacman -S fcitx5-pinyin-moegirl-rime
    ```
 
