@@ -46,7 +46,7 @@ sudo pacman -S fcitx5-pinyin-moegirl-rime
 
 2. 配置
 
-- 将 `[i3 repo](https://github.com/ScriptGo/i3/tree/main/config)` 中的 `fcitx5` 文件夹复制到`~/.config/` 目录下
+- 将 [i3 repo](https://github.com/ScriptGo/i3/tree/main/config) 中的 `fcitx5` 文件夹复制到`~/.config/` 目录下
 - 将 `本repo` 复制到 `~/.local/share/fcitx5/` 目录下
 
 3. 美化
@@ -58,16 +58,16 @@ sudo pacman -S fcitx5-pinyin-moegirl-rime
         https://github.com/ayamir/fcitx5-gruvbox
         ```
 
-将其复制到 `~/.local/share/fcitx5/themes/` 目录, 然后修改配置文件 `~/.config/fcitx5/conf/classicui.conf`
+    将其复制到 `~/.local/share/fcitx5/themes/` 目录, 然后修改配置文件 `~/.config/fcitx5/conf/classicui.conf`
 
         ```bash
         Theme=Gruvbox-Dark                       # 主题
         ```
 
-**注意：修改配置文件 ~/.config/fcitx5/profile 时，请务必退出 fcitx5 输入法，
+**注意：修改配置文件 `~/.config/fcitx5/profile` 时，请务必退出 fcitx5 输入法，
 否则会因为输入法退出时会覆盖配置文件导致之前的修改被覆盖；修改其他配置文件可以不用退出 fcitx5 输入法.**
 
-重启后生效
+==重启后生效==
 
 
 ## rime
