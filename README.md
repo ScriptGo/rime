@@ -95,7 +95,22 @@ sudo pacman -S fcitx5-pinyin-moegirl-rime
             "/math": [ 数学：/sx, 数字：/0到/9, 分数：/fs 括号：/kh, 星号：/xh, 方块：/fk, 几何：/jh, 箭头：/jt, 罗马数字：/lm, 大写罗马数字：/lmd, 拉丁：/ld, 上标：/sb, 下标：/xb, 希腊字母：/xl, 大写希腊字母：/xld ]
     ```
 
-4. 截图
+4. 词库
+
+如需添加或修改词库，编辑 `extended.dict.yaml` 文件即可
+
+**词库文件要与 extended.dict.yaml文件在同一目录，或者将词库文件统一放在一个目录**
+
+```bash
+import_tables:
+  # - luna_pinyin #默认词库,如需启用请取消注释
+  # - ./dicts/pinyin_simp   这样也可以
+
+  - pinyin_simp 
+  - moegirl
+```
+
+5. 截图
 
     1.   正常输入
     ![](./1.png)
