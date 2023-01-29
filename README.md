@@ -30,19 +30,19 @@ sudo pacman -S fcitx5-pinyin-moegirl-rime
 
     1.1 如果显示服务器是 `x11`, 则编辑 ` ~/.xprofile ` 文件
 
-        ```bash
-        export GTK_IM_MODULE=fcitx5
-        export QT_IM_MODULE=fcitx5
-        export XMODIFIERS=@im=fcitx5
-        ```
+```bash
+export GTK_IM_MODULE=fcitx5
+export QT_IM_MODULE=fcitx5
+export XMODIFIERS=@im=fcitx5
+```
 
     1.2 如果显示服务器是`wayland` , 则编辑 `~/.pam_environment` 文件
 
-        ```bash
-        GTK_IM_MODULE=fcitx5
-        QT_IM_MODULE=fcitx5
-        XMODIFIERS=@im=fcitx5
-        ```
+```bash
+GTK_IM_MODULE=fcitx5
+QT_IM_MODULE=fcitx5
+XMODIFIERS=@im=fcitx5
+```
 
 2. 配置
 
@@ -53,16 +53,16 @@ sudo pacman -S fcitx5-pinyin-moegirl-rime
 
     去Github下载以下主题
 
-        ```bash
-        https://github.com/ayamir/fcitx5-nord
-        https://github.com/ayamir/fcitx5-gruvbox
-        ```
+```bash
+https://github.com/ayamir/fcitx5-nord
+https://github.com/ayamir/fcitx5-gruvbox
+```
 
     将其复制到 `~/.local/share/fcitx5/themes/` 目录, 然后修改配置文件 `~/.config/fcitx5/conf/classicui.conf`
 
-        ```bash
-        Theme=Gruvbox-Dark                       # 主题
-        ```
+```bash
+Theme=Gruvbox-Dark                       # 主题
+```
 
 **注意：修改配置文件 `~/.config/fcitx5/profile` 时，请务必退出 fcitx5 输入法，
 否则会因为输入法退出时会覆盖配置文件导致之前的修改被覆盖；修改其他配置文件可以不用退出 fcitx5 输入法.**
@@ -88,12 +88,12 @@ sudo pacman -S fcitx5-pinyin-moegirl-rime
 
 3. 表情符号
 
-    ```bash
-          symbols:
-            "/emoji": [ 手势：/ss, 地球：/dq, 水果：/sg, 表情：/bq, emo：/em, 动物：/da, 天气：/tq, 音乐：/yy ]
-            "/sym": [ 符号：/fh, 标志：/bz, 电脑：/dn , 清单：/td 节气：/jq, 单位：/dw, 标点：/bd, 拼音：/py, 货币：/hb ]
-            "/math": [ 数学：/sx, 数字：/0到/9, 分数：/fs 括号：/kh, 星号：/xh, 方块：/fk, 几何：/jh, 箭头：/jt, 罗马数字：/lm, 大写罗马数字：/lmd, 拉丁：/ld, 上标：/sb, 下标：/xb, 希腊字母：/xl, 大写希腊字母：/xld ]
-    ```
+```bash
+      symbols:
+        "/emoji": [ 手势：/ss, 地球：/dq, 水果：/sg, 表情：/bq, emo：/em, 动物：/da, 天气：/tq, 音乐：/yy ]
+        "/sym": [ 符号：/fh, 标志：/bz, 电脑：/dn , 清单：/td 节气：/jq, 单位：/dw, 标点：/bd, 拼音：/py, 货币：/hb ]
+        "/math": [ 数学：/sx, 数字：/0到/9, 分数：/fs 括号：/kh, 星号：/xh, 方块：/fk, 几何：/jh, 箭头：/jt, 罗马数字：/lm, 大写罗马数字：/lmd, 拉丁：/ld, 上标：/sb, 下标：/xb, 希腊字母：/xl, 大写希腊字母：/xld ]
+```
 
 4. 词库
 
