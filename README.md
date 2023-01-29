@@ -67,19 +67,49 @@ sudo pacman -S fcitx5-pinyin-moegirl-rime
 **注意：修改配置文件 `~/.config/fcitx5/profile` 时，请务必退出 fcitx5 输入法，
 否则会因为输入法退出时会覆盖配置文件导致之前的修改被覆盖；修改其他配置文件可以不用退出 fcitx5 输入法.**
 
-==重启后生效==
+*** `重启后生效` ***
 
 
 ## rime
 
-| 配置文件             | 配置说明                             |
-| -------------------- | ----------------------------------|
-| default.custom.yaml  | 输入方案、候选栏、快捷键等             |
-| extended.dict.yaml   | 扩展词库                           |
-| flypy.schema.ymal    | 自定义小鹤双拼方案                    |
-| symbols.custom.yaml  | 自定义标点符号                           |
-| custom_phrase.txt    | 自定义短语                           |
+1. 总览
 
+    | 配置文件             | 配置说明                             |
+    | -------------------- | ----------------------------------|
+    | default.custom.yaml  | 输入方案、候选栏、快捷键等             |
+    | extended.dict.yaml   | 扩展词库                           |
+    | flypy.schema.ymal    | 自定义小鹤双拼方案                    |
+    | symbols.custom.yaml  | 自定义标点符号                           |
+    | custom_phrase.txt    | 自定义短语                           |
+
+2. 说明
+
+此配置是针对 `小鹤双拼`方案的，不一定适合所有人，可以在此基础上进行修改。
+
+3. 表情符号
+
+    ```bash
+          symbols:
+            "/emoji": [ 手势：/ss, 地球：/dq, 水果：/sg, 表情：/bq, emo：/em, 动物：/da, 天气：/tq, 音乐：/yy ]
+            "/sym": [ 符号：/fh, 标志：/bz, 电脑：/dn , 清单：/td 节气：/jq, 单位：/dw, 标点：/bd, 拼音：/py, 货币：/hb ]
+            "/math": [ 数学：/sx, 数字：/0到/9, 分数：/fs 括号：/kh, 星号：/xh, 方块：/fk, 几何：/jh, 箭头：/jt, 罗马数字：/lm, 大写罗马数字：/lmd, 拉丁：/ld, 上标：/sb, 下标：/xb, 希腊字母：/xl, 大写希腊字母：/xld ]
+    ```
+
+4. 截图
+
+    1.   正常输入
+    ![](./1.png)
+    2.   自定义短语
+    ![](./2.png)
+
+    3.   自定义符号
+    ![](./3.png)
+
+    4.   自定义符号
+    ![](./4.png)
+
+
+​    
 
 ## 参考/致谢
 
