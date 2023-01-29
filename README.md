@@ -104,11 +104,8 @@ sudo pacman -S fcitx5-pinyin-moegirl-rime
 
     3.   自定义符号
     ![](./3.png)
-
     ![](./4.png)
 
-
-​    
 
 ## 参考/致谢
 
