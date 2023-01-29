@@ -58,7 +58,7 @@ https://github.com/ayamir/fcitx5-nord
 https://github.com/ayamir/fcitx5-gruvbox
 ```
 
-    将其复制到 `~/.local/share/fcitx5/themes/` 目录, 然后修改配置文件 `~/.config/fcitx5/conf/classicui.conf`
+ 将其复制到 `~/.local/share/fcitx5/themes/` 目录, 然后修改配置文件 `~/.config/fcitx5/conf/classicui.conf`
 
 ```bash
 Theme=Gruvbox-Dark                       # 主题
