@@ -1,4 +1,4 @@
-# Manjaro 输入法配置(fcitx5-rime)
+# Manjaro 输入法配置
 
 
 ## 安装
