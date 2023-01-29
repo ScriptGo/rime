@@ -28,41 +28,41 @@ sudo pacman -S fcitx5-pinyin-moegirl-rime
 
     使用 `echo ${XDG_SESSION_TYPE} ` 命令查看显示服务器是 `x11`,  还是 `wayland`
 
-1.1 如果显示服务器是 `x11`, 则编辑 ` ~/.xprofile ` 文件
+    1.1 如果显示服务器是 `x11`, 则编辑 ` ~/.xprofile ` 文件
 
-```bash
-export GTK_IM_MODULE=fcitx5
-export QT_IM_MODULE=fcitx5
-export XMODIFIERS=@im=fcitx5
-```
+        ```bash
+        export GTK_IM_MODULE=fcitx5
+        export QT_IM_MODULE=fcitx5
+        export XMODIFIERS=@im=fcitx5
+        ```
 
-1.2 如果显示服务器是`wayland` , 则编辑 `~/.pam_environment` 文件
+    1.2 如果显示服务器是`wayland` , 则编辑 `~/.pam_environment` 文件
 
-```bash
-GTK_IM_MODULE=fcitx5
-QT_IM_MODULE=fcitx5
-XMODIFIERS=@im=fcitx5
-```
+        ```bash
+        GTK_IM_MODULE=fcitx5
+        QT_IM_MODULE=fcitx5
+        XMODIFIERS=@im=fcitx5
+        ```
 
 2. 配置
 
-- 将 `i3 repo` 中的 `fcitx5` 文件夹复制到`~/.config/` 目录下
+- 将 `[i3 repo](https://github.com/ScriptGo/i3/tree/main/config)` 中的 `fcitx5` 文件夹复制到`~/.config/` 目录下
 - 将 `本repo` 复制到 `~/.local/share/fcitx5/` 目录下
 
 3. 美化
 
-去Github下载以下主题
+    去Github下载以下主题
 
-```bash
-https://github.com/ayamir/fcitx5-nord
-https://github.com/ayamir/fcitx5-gruvbox
-```
+        ```bash
+        https://github.com/ayamir/fcitx5-nord
+        https://github.com/ayamir/fcitx5-gruvbox
+        ```
 
 将其复制到 `~/.local/share/fcitx5/themes/` 目录, 然后修改配置文件 `~/.config/fcitx5/conf/classicui.conf`
 
-```bash
-Theme=Gruvbox-Dark                       # 主题
-```
+        ```bash
+        Theme=Gruvbox-Dark                       # 主题
+        ```
 
 **注意：修改配置文件 ~/.config/fcitx5/profile 时，请务必退出 fcitx5 输入法，
 否则会因为输入法退出时会覆盖配置文件导致之前的修改被覆盖；修改其他配置文件可以不用退出 fcitx5 输入法.**
