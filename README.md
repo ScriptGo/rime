@@ -99,16 +99,22 @@ Theme=Gruvbox-Dark                       # 主题
 
 如需添加或修改词库，编辑 `extended.dict.yaml` 文件即可
 
-**词库文件要与 extended.dict.yaml文件在同一目录，或者将词库文件统一放在一个目录**
+**本方案主要采用的是 [iDvel/rime-ice](https://github.com/iDvel/rime-ice) 这个仓库的词库, 略有增删**
 
 ```bash
 import_tables:
   # - luna_pinyin #默认词库,如需启用请取消注释
-  # - ./dicts/pinyin_simp   这样也可以
 
-  - pinyin_simp 
+  - dicts/simp
+  - dicts/base
+  - dicts/ext
+  - dicts/sogou
+  - dicts/tencent
+  - dicts/others
   - moegirl
 ```
+
+**词库文件要与 extended.dict.yaml文件在同一目录，或者将词库文件统一放在一个目录**
 
 5. 截图
 
@@ -124,15 +130,9 @@ import_tables:
     ![](./4.png)
 
 
-## 参考/致谢
+## 主要参考/致谢
 
-   1. [鼠须管配置 2019](https://placeless.net/blog/rime-squirrel-customization-2019#article)
-   2. [好用好看好玩的输入法 —— 鼠须管配置使用](https://blog.isteed.cc/post/squirrel-customization-2022/)
-   3. [鼠须管配置 2019](https://placeless.net/blog/rime-squirrel-customization-2019#article)
-   4. [鼠须管 0.11 Mac 升级重装配置 2019](https://github.com/cnfeat/Rime)
-   5. [Rime 鼠须管输入法傻瓜式配置指南](https://github.com/wongdean/rime-settings)
-   6. [Rime Squirrel 鼠须管输入法配置详解](https://ssnhd.com/2022/01/06/rime/)
-   7. [鼠须管配置 2021](https://placeless.net/blog/rime-squirrel-customization-2021)
-   8. [我的 Rime 配置 2022](https://dvel.me/posts/my-rime-setting-2022/)
+   1. [鼠须管配置 2021](https://placeless.net/blog/rime-squirrel-customization-2021)
+   2. [我的 Rime 配置 2022](https://dvel.me/posts/my-rime-setting-2022/)
 
    

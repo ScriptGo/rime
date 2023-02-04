@@ -3,6 +3,12 @@
 -- 日期时间
 -- 提高权重的原因：因为在方案中设置了大于 1 的 initial_quality，导致 rq sj xq dt ts 产出的候选项在所有词语的最后。
 function date_translator(input, seg)
+    local config = env.engine.schema.config
+    local date = config:get_string(env.name_space .. "/date") or "rq"
+    local time = config:get_string(env.name_space .. "/time") or "sj"
+    local week = config:get_string(env.name_space .. "/week") or "xq"
+    local datetime = config:get_string(env.name_space .. "/datetime") or "dt"
+    local timestamp = config:get_string(env.name_space .. "/timestamp") or "ts"
     -- 日期
     if (input == "rq") then
         local cand = Candidate("date", seg.start, seg._end, os.date("%Y-%m-%d"), "")
@@ -250,3 +256,21 @@ function single_char_first_filter(input)
         yield(cand)
     end
 end
+-------------------------------------------------------------
+-- Unicode 输入
+-- 复制自： https://github.com/shewer/librime-lua-script/blob/main/lua/component/unicode.lua
+function unicode(input, seg, env)
+    local ucodestr = seg:has_tag("unicode") and input:match("U(%x+)")
+    if ucodestr and #ucodestr > 1 then
+        local code = tonumber(ucodestr, 16)
+        local text = utf8.char(code)
+        yield(Candidate("unicode", seg.start, seg._end, text, string.format("U%x", code)))
+        if #ucodestr < 5 then
+            for i = 0, 15 do
+                local text = utf8.char(code * 16 + i)
+                yield(Candidate("unicode", seg.start, seg._end, text, string.format("U%x~%x", code, i)))
+            end
+        end
+    end
+end
+-------------------------------------------------------------
