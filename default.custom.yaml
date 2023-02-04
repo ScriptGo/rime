@@ -12,12 +12,12 @@ patch:
     alternative_select_labels: [ ①, ②, ③, ④, ⑤, ⑥, ⑦, ⑧, ⑨ ]  # 修改候选词标签
 
 # 方案切换(就一种方案，不用切换)
-#  switcher:
-#    abbreviate_options: true
-#    caption: 〔方案切换〕
-#    fold_options: true
-#    hotkeys:
-#      - "Control+grave"
+  switcher:
+    abbreviate_options: true
+    caption: 〔方案切换〕
+    fold_options: true
+    hotkeys:
+      - "Control+grave"
 
   ascii_composer:
     good_old_caps_lock: true # 设置Caps键仅切换大小写
