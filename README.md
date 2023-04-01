@@ -40,7 +40,7 @@ XMODIFIERS=@im=fcitx5
 
 2. 配置
 
-- 将 [i3 repo](https://github.com/ScriptGo/i3/tree/main/config) 中的 `fcitx5` 文件夹复制到`~/.config/` 目录下
+- 将 [dotfiles repo](https://github.com/ScriptGo/dotfiles/tree/main/config) 中的 `fcitx5` 文件夹复制到`~/.config/` 目录下
 - 将 `本repo` 复制到 `~/.local/share/fcitx5/` 目录下
 
 3. 美化
@@ -111,15 +111,14 @@ import_tables:
 
 5. 截图
 
-    1.   正常输入
+  1.   正常输入
     ![](./1.png)
 
-    2.   自定义短语
+  2.   自定义短语
     ![](./2.png)
 
-    3.   自定义符号
+  3.   自定义符号
     ![](./3.png)
-
     ![](./4.png)
 
 
