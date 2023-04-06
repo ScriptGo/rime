@@ -123,7 +123,7 @@ import_tables:
 
 
 
-## 主要参考/致谢
+## 参考/致谢
 
    1. [鼠须管配置 2021](https://placeless.net/blog/rime-squirrel-customization-2021)
    2. [我的 Rime 配置 2022](https://dvel.me/posts/my-rime-setting-2022/)
