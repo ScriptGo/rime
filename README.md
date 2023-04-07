@@ -22,7 +22,7 @@ sudo pacman -S fcitx5-rime rime-double-pinyin
 
     使用 `echo ${XDG_SESSION_TYPE} ` 命令查看显示服务器是 `x11`,  还是 `wayland`
 
-1.1 如果显示服务器是 `x11`, 则编辑 ` ~/.xprofile ` 文件
+如果显示服务器是 `x11`, 则编辑 ` ~/.xprofile ` 文件
 
 ```bash
 export GTK_IM_MODULE=fcitx5
@@ -30,7 +30,7 @@ export QT_IM_MODULE=fcitx5
 export XMODIFIERS=@im=fcitx5
 ```
 
-1.2 如果显示服务器是`wayland` , 则编辑 `~/.pam_environment` 文件
+如果显示服务器是`wayland` , 则编辑 `~/.pam_environment` 文件
 
 ```bash
 GTK_IM_MODULE=fcitx5
@@ -58,8 +58,8 @@ https://github.com/ayamir/fcitx5-gruvbox
 Theme=Gruvbox-Dark
 ```
 
-**注意：修改配置文件 `~/.config/fcitx5/profile` 时，请务必退出 fcitx5 输入法，
-否则会因为输入法退出时会覆盖配置文件导致之前的修改被覆盖；修改其他配置文件可以不用退出 fcitx5 输入法.**
+**注意：修改配置文件 `~/.config/fcitx5/profile` 时，请务必退出 fcitx5，
+否则会因为输入法退出时会覆盖配置文件导致之前的修改被覆盖；修改其他配置文件可以不用退出 fcitx5.**
 
 `重启后生效` 
 
@@ -106,8 +106,6 @@ import_tables:
   - dicts/tencent
   - dicts/others
 ```
-
-**词库文件要与 extended.dict.yaml文件在同一目录，或者将词库文件统一放在一个目录**
 
 5. 截图
 
