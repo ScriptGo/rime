@@ -10,106 +10,94 @@
 # 英文缩写
 
 BTW	btw
-by the way	btw
 顺便说一句		btw
 顺带一提	btw
+by the way	btw
 
 BDFL	bdfl
-Benevolent Dictator For Life	bdfl
 终身仁慈独裁者	bdfl
+Benevolent Dictator For Life	bdfl
 
 BCC	bcc
-blind carbon copy	bcc
 隐秘抄送	bcc
+blind carbon copy	bcc
 
 CC	cc
-carbon copy	cc
 抄送	cc
+carbon copy	cc
 
 CES	ces
-Consumer Electronics Show	ces
 消费电子展		ces
+Consumer Electronics Show	ces
 
 DIY	diy
-Do It Yourself	diy
 自己动手做		diy
 亲力亲为	diy
+Do It Yourself	diy
 
 DRY	dry
-Don't repeat yourself	dry
 不要重复你自己	dry
-
-VIP	vip
-Very Important Person	vip
-贵宾	vip
-
-PTSD	ptsd
-Post-traumatic stress disorder	ptsd
-创伤后应激障碍	ptsd
-
-PoC	poc
-Proof of concept	poc
-概念验证	poc
-为观点提供证据	poc
-
-TL;DR	tldr
-tl;dr	tldr
-too long; didn't read	tldr
-太长不看	tldr
-长话短说	tldr
-
-UGC	ugc
-user-generated content	ugc
-用户创造内容	ugc
-user-generated cumber	ugc
-用户创造麻烦	ugc
-
+Don't repeat yourself	dry
 
 FYI	fyi
-For Your Information	fyi
 供你参考	fyi
 仅供参考	fyi
+For Your Information	fyi
 
 FAQ	faq
-Frequently Asked Question	faq
 常见问题	faq
+Frequently Asked Question	faq
+
+GDPR	gdpr
+通用数据保护条例	gdpr
+General Data Protection Regulation	gdpr
+
+NSFW	nsfw
+不适于工作场所	nsfw
+Not Safe For Work	nsfw
+
+OOO	ooo
+不在办公室		ooo
+没上班	ooo
+Out of Office	ooo
 
 PS	ps
 附言	ps
 Photoshop	ps
 PostScript	ps
 
-TBD	tbd
-To Be Determined	tbd
-待决定	tbd
-待商议	tbd
-
-OOO	ooo
-Out of Office	ooo
-不在办公室		ooo
-没上班	ooo
-
-NSFW	nsfw
-Not Safe For Work	nsfw
-不适于工作场所	nsfw
+PTSD	ptsd
+创伤后应激障碍	ptsd
+Post-traumatic stress disorder	ptsd
 
 R.I.P.	rip
+安息	rip
 Requiescat in pace	rip
 Rest in peace	rip
-安息	rip
 
-RFC	rfc
-Request for Comments	rfc
-请求意见稿		rfc
-意见征求	rfc
-请求评论	rfc
+TBD	tbd
+待决定	tbd
+待商议	tbd
+To Be Determined	tbd
 
-EDA	eda
-Exploratory Data Analysis	eda
-探索性数据分析	eda
+TL;DR	tldr
+tl;dr	tldr
+太长不看	tldr
+长话短说	tldr
+too long; didn't read	tldr
+
+UGC	ugc
+用户创造内容	ugc
+user-generated content	ugc
+user-generated cumber	ugc
+用户创造麻烦	ugc
+
+VIP	vip
+贵宾	vip
+Very Important Person	vip
+
 ################################################################################
-# 计算机
-# 符号
+
 ⌘	cmd
 ⌃	ctl
 ⌥	opt
@@ -117,7 +105,6 @@ Exploratory Data Analysis	eda
 ↩︎	enter
 ⇥	tab
 
-# OS
 OS	os
 Android	and
 Windows	win
@@ -126,81 +113,100 @@ Unix	uni
 iOS	ios
 
 API	api
-application programming interface	api
 应用程序接口	api
+application programming interface	api
 
 Creative Commons	cc
-CC BY-SA 3.0	cc
 知识共享	cc
+CC BY-SA 3.0	cc
 
 CRUD	crud
 增删查改	crud
 创读更删	crud
+
 CLI	cli
-Command Line Interface	cli
 命令行用户界面	cli
+Command Line Interface	cli
+
 DSL	dsl
-domain-specific language	dsl
 领域特定语言	dsl
+domain-specific language	dsl
+
+HTTP	http
+HTTPS	http
+超文本传输协议	http
+Hyper Text Transfer Protocol	http
+Hyper Text Transfer Protocol over Secure Socket Layer	http
 
 SDK	sdk
-Software Development Kit	SDK
 软件开发工具包	SDK
+Software Development Kit	SDK
 
 IDE	ide
-Integrated Development Environment	IDE
 集成开发环境	IDE
+Integrated Development Environment	IDE
 
 KISS	kiss
 Keep It Simple, Stupid	kiss
+
 GPL	gpl
-GNU General Public License	gpl
 GNU通用公共许可协议	gpl
+GNU General Public License	gpl
+
 GNU	gnu
 GNU's Not Unix	gnu
+
 GTD	gtd
-Getting Things Done	gtd
 搞定	gtd
+Getting Things Done	gtd
+
 GUI	gui
-Graphical User Interface	gui
 图形用户界面	gui
-GDPR	gdpr
-通用数据保护条例	gdpr
-General Data Protection Regulation	gdpr
+Graphical User Interface	gui
 
 TUI	tui
-Terminal User Interface	tui
 终端用户界面	tui
-Text-based User Interface	tui
+Terminal User Interface	tui
 基于文本的用户界面	tui
+Text-based User Interface	tui
 
 SLOC	sloc
 源代码行数		sloc
 Source lines of code	sloc
 
 LOC	loc
-lines of code	loc
 程序行数	loc
+lines of code	loc
 
 LSP	lsp
-Language Server Protocol	lsp
 语言服务器协议	lsp
+Language Server Protocol	lsp
 
 REPL	repl
-Read-Eval-Print Loop	repl
 读取-求值-输出 循环	repl
+Read-Eval-Print Loop	repl
 
 URI	uri
-Uniform Resource Identifier	uri
 统一资源标志符	uri
+Uniform Resource Identifier	uri
 
 URN	urn
-Uniform Resource Name	urn
 统一资源名称	urn
+Uniform Resource Name	urn
 
 URL	url
-Uniform Resource Locator	url
 统一资源定位符	url
+Uniform Resource Locator	url
+
+RFC	rfc
+请求意见稿		rfc
+意见征求	rfc
+请求评论	rfc
+Request for Comments	rfc
+
+REST	rest
+表现层状态转换	rest
+Representational State Transfer	rest
 
 ################################################################################
 
@@ -238,6 +244,17 @@ Deep learning fake	df
 NLP	nlp
 自然语言处理	nlp
 Natural Language Processing	nlp
+
+################################################################################
+
+EDA	eda
+Exploratory Data Analysis	eda
+探索性数据分析	eda
+
+PoC	poc
+概念验证	poc
+为观点提供证据	poc
+Proof of concept	poc
 
 ################################################################################
 Rime	rime
