@@ -228,6 +228,9 @@ Deep Neural Networks	dnn
 GAN	gan
 生成对抗网络	gan
 Generative Adversarial Network	gan
+LLM	llm
+大型语言模型	llm
+Large Language Model	llm
 NN	nn
 神经网络	nn
 Neural Network	nn
