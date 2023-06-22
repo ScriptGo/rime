@@ -18,7 +18,7 @@ sudo pacman -S fcitx5-rime rime-double-pinyin
 
 ## 配置
 
-1. 配置
+1. 配置环境变量
 
 编辑 `/etc/environment` 文件配置环境变量：
 
