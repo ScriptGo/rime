@@ -1,4 +1,4 @@
-# Manjaro 输入法配置
+# ArchLinux 输入法配置
 
 
 ## 安装
@@ -18,32 +18,21 @@ sudo pacman -S fcitx5-rime rime-double-pinyin
 
 ## 配置
 
-1. 确认系统显示服务器
+1. 配置
 
-    使用 `echo ${XDG_SESSION_TYPE} ` 命令查看显示服务器是 `x11`,  还是 `wayland`
+编辑 `/etc/environment` 文件配置环境变量：
 
-如果显示服务器是 `x11`, 则编辑 ` ~/.xprofile ` 文件
-
-```bash
-export GTK_IM_MODULE=fcitx5
-export QT_IM_MODULE=fcitx5
-export XMODIFIERS=@im=fcitx5
 ```
-
-如果显示服务器是`wayland` , 则编辑 `~/.pam_environment` 文件
-
-```bash
 GTK_IM_MODULE=fcitx5
 QT_IM_MODULE=fcitx5
+SDL_IM_MODULE=fcitx5
 XMODIFIERS=@im=fcitx5
 ```
 
-2. 配置
-
-- 将 [dotfiles repo](https://github.com/ScriptGo/dotfiles/tree/main/config) 中的 `fcitx5` 文件夹复制到`~/.config/` 目录下
+- 将 [hyprland-dots](https://github.com/ScriptGo/hyprland-dots/tree/main/.config) 中的 `fcitx5` 文件夹复制到`~/.config/` 目录下
 - 将 `本repo` 复制到 `~/.local/share/fcitx5/` 目录下
 
-3. 美化
+2. 美化
 
 下载以下主题
 
