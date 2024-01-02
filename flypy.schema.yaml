@@ -1,0 +1,213 @@
+# Rime schema
+# encoding: utf-8
+
+# 方案说明
+schema:
+  schema_id: flypy
+  name: 小鹤双拼
+  description: |
+    小鹤双拼自定义方案
+
+# 功能开关
+# states: 方案选单显示的名称。可以注释掉，仍可以通过快捷键切换。
+# reset: 默认状态。 注释掉后，切换窗口时不会重置到默认状态。
+switches:
+  - name: full_shape
+    states: [半角, 全角]
+    reset: 0
+  - name: ascii_punct
+    states: [。，, ．，]
+    reset: 0
+  - name: emoji
+    states: ["🈚️️\uFE0E", "🈶️️\uFE0F"]
+    reset: 1
+
+# 输入引擎
+# 只用简体中文，所以
+# 刪除 ascii_composer 和 abc_segmentor.
+engine:
+  processors:
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - matcher
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - script_translator
+    - lua_translator@date_translator # 自定义 lua 脚本
+    - table_translator@custom_phrase # 自定义词库
+
+  filters:
+    - simplifier@emoji # emoji
+    - uniquifier # 去重
+
+# 限制码长，默认 100。（最多能输入的字符个数）
+code_length_limit_processor: 100
+
+# Lua 配置: 日期、时间、星期、ISO 8601、时间戳的触发关键字
+date_translator:
+  date: date # 日期： 2022-11-29
+  time: time # 时间： 18:13
+  week: week # 星期： 星期二
+  datetime: datetime # ISO 8601： 2022-11-29T18:13:11+08:00
+  timestamp: timestamp # 时间戳： 1669716794
+
+# 主翻译器，拼音
+translator:
+  dictionary: extended # 挂载词库 extended_dict.yaml
+  prism: flypy # 多方案共用一个词库时，为避免冲突，需要用 prism 指定一个名字
+  contextual_suggestions: true # 开启八股文
+  max_homophones: 7
+
+# emoji
+emoji:
+  opencc_config: emoji.json
+  option_name: emoji
+  tips: all
+
+# 自定义短语
+custom_phrase:
+  dictionary: ""
+  user_dict: custom_phrase # 需要手动创建 custom_phrase.txt 文件
+  db_class: stabledb
+  enable_completion: false # 禁止补全提示
+  enable_sentence: false # 禁止造句
+  initial_quality: 99 # custom_phrase 的权重
+
+# 标点符号
+# punctuator 下面有三个子项：
+#   full_shape 全角标点映射
+#   half_shape 半角标点映射
+#   symbols    Rime 的预设配置是以 '/' 前缀开头输出一系列字符，自定义的 symbols_caps_v.yaml 修改成了 'V' 开头。
+
+# 预设的 punctuation.yaml 包含了 full_shape half_shape （全角和半角的符号映射）
+# 预设的 symbols.yaml     包含了 full_shape half_shape symbols
+punctuator:
+  import_preset: symbols.custom # 导入自定义符号
+  symbols:
+    "/emoji":
+      [
+        手势：/ss,
+        地球：/dq,
+        水果：/sg,
+        表情：/bq,
+        emo：/em,
+        动物：/da,
+        天气：/tq,
+        音乐：/yy,
+      ]
+    "/sym":
+      [
+        符号：/fh,
+        标志：/bz,
+        电脑：/dn,
+        清单：/td 节气：/jq,
+        单位：/dw,
+        标点：/bd,
+        拼音：/py,
+        货币：/hb,
+      ]
+    "/math":
+      [
+        数学：/sx,
+        数字：/0到/9,
+        分数：/fs 括号：/kh,
+        星号：/xh,
+        方块：/fk,
+        几何：/jh,
+        箭头：/jt,
+        罗马数字：/lm,
+        大写罗马数字：/lmd,
+        拉丁：/ld,
+        上标：/sb,
+        下标：/xb,
+        希腊字母：/xl,
+        大写希腊字母：/xld,
+      ]
+  half_shape: # 也可以直接在这里配置
+    "#": "#"
+    "*": "*"
+    "%": "%"
+    "^": "^"
+    "`": "`"
+    "~": "~"
+    "@": "@"
+    "=": "="
+    "/": ["/", "/", "÷"]
+    "|": ["|", "｜", "·", "・", "§", "¦", "‖", "︴"]
+    '\': "、"
+    "_": "_"
+    "'": { pair: ["「", "」"] }
+    "[": ["【", "〔", "［"]
+    "]": ["】", "〕", "］"]
+    "{": "{"
+    "}": "}"
+    "$": ["¥", "$", "€", "£", "¢", "¤"]
+    "<": ["《", "〈", "«", "<"]
+    ">": ["》", "〉", "»", ">"]
+
+# 从 default 继承快捷键
+key_binder:
+  import_preset: default # 从 default.yaml 继承通用的
+  # bindings:             # 也可以再增加方案专有的
+
+# 处理符合特定规则的输入码，如网址、反查
+recognizer:
+  import_preset: default
+  patterns:
+    punct: "^/([0-9]0?|[A-Za-z]+)$" # 自定义，用来匹配自定义符号
+    email: "^[A-Za-z][-_.0-9A-Za-z]*@.*$" # 自带的，e-mail 正则
+    uppercase: "[A-Z][-_+.'0-9A-Za-z]*$" # 自带的，大写字母开头后，可以输入[-_+.'0-9A-Za-z]这些字符
+    url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]+[.].+$" # 自带的，URL 正则
+    unicode: "^U[a-f0-9]+" # 响应 Unicode
+
+# 拼写设定
+speller:
+  # 如果不想让什么标点直接上屏，可以加在 alphabet，或者编辑标点符号为两个及以上的映射
+  alphabet: "zyxwvutsrqponmlkjihgfedcba"
+  initials: "zyxwvutsrqponmlkjihgfedcba"
+  delimiter: " '" # 第一位<空格>是拼音之间的分隔符；第二位<'>表示可以手动输入单引号来分割拼音。
+  algebra:
+    - erase/^xx$/
+    - derive/^([jqxy])u$/$1v/
+    - derive/^([aoe])([ioun])$/$1$1$2/
+    - xform/^([aoe])(ng)?$/$1$1$2/
+    - xform/iu$/Q/
+    - xform/(.)ei$/$1W/
+    - xform/uan$/R/
+    - xform/[uv]e$/T/
+    - xform/un$/Y/
+    - xform/^sh/U/
+    - xform/^ch/I/
+    - xform/^zh/V/
+    - xform/uo$/O/
+    - xform/ie$/P/
+    - xform/i?ong$/S/
+    - xform/ing$|uai$/K/
+    - xform/(.)ai$/$1D/
+    - xform/(.)en$/$1F/
+    - xform/(.)eng$/$1G/
+    - xform/[iu]ang$/L/
+    - xform/(.)ang$/$1H/
+    - xform/ian$/M/
+    - xform/(.)an$/$1J/
+    - xform/(.)ou$/$1Z/
+    - xform/[iu]a$/X/
+    - xform/iao$/N/
+    - xform/(.)ao$/$1C/
+    - xform/ui$/V/
+    - xform/in$/B/
+    - xlit/QWRTYUIOPSDFGHJKLZXCVBNM/qwrtyuiopsdfghjklzxcvbnm/
+    #- abbrev/^(.).+$/$1/ # 首字母简拼，开启后会导致 3 个字母时 kj'x 变成 k'jx 的问题
+
+# 导入八股文
+grammar:
+  language: zh-hans-t-essay-bgw

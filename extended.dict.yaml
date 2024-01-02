@@ -1,0 +1,20 @@
+# Rime Dictionary
+# encoding: utf-8
+
+---
+name: extended
+version: "2024-01-02"
+sort: by_weight
+
+# vocabulary: essay-zh-hans
+# use_preset_vocabulary: true
+
+use_preset_vocabulary: false # 禁用默认的“八股文”词库及词频系统,防止候选词中出现繁体字、方框字
+
+import_tables:
+  - dicts/8105     # 字表
+  - dicts/base     # 基础词库
+  - dicts/ext      # 扩展词库
+  - dicts/sogou    # 搜狗词向量（大词库，部署时间较长）
+  - dicts/tencent  # 腾讯词向量（大词库，部署时间较长）
+  - dicts/others   # 一些杂项
