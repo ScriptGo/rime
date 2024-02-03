@@ -225,6 +225,9 @@ AIGC	aigc
 AI Generated Content	aigc
 ANN	 ann
 人工神经网络	ann
+AGI agi
+通用人工智能    agi
+Artificial General Intelligence agi
 Artificial Neural Network	ann
 CNN	cnn
 卷积神经网络	cnn
@@ -235,6 +238,9 @@ Deep Neural Networks	dnn
 GAN	gan
 生成对抗网络	gan
 Generative Adversarial Network	gan
+GPT gpt
+基于转换器的生成式预训练模型    gpt
+Generative pre-trained transformers gpt
 LLM	llm
 大型语言模型	llm
 Large Language Model	llm
