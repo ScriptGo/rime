@@ -1,4 +1,4 @@
-<div  align="center"> <b>ArchLinux 输入法配置</b> </div>
+# ArchLinux 输入法配置
 
 ## 安装
 
@@ -26,10 +26,10 @@ sudo pacman -S fcitx5-rime rime-double-pinyin
 编辑 `/etc/environment` 文件配置环境变量：
 
 ```bash
-GTK_IM_MODULE=fcitx5
-QT_IM_MODULE=fcitx5
-SDL_IM_MODULE=fcitx5
-XMODIFIERS=@im=fcitx5
+GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+SDL_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx
 ```
 
 2.美化
