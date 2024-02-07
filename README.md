@@ -37,8 +37,8 @@ XMODIFIERS=@im=fcitx
 克隆以下repo到本地
 
 ```bash
-https://github.com/ayamir/fcitx5-nord
-https://github.com/ayamir/fcitx5-gruvbox
+https://github.com/ayamir/fcitx5-nord.git
+https://github.com/ayamir/fcitx5-gruvbox.git
 ```
 
 - 复制fcitx5-gruvbox中的 `Gruvbox-Dark` 到 `~/.local/share/fcitx5/themes/` 目录
@@ -56,7 +56,7 @@ Theme=Gruvbox-Dark
 
 `exec-once = fcitx5 --replace -d`
 
-**重启或注销后生效**
+**注销或重启系统后生效**
 
 ## rime
 
