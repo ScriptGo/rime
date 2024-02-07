@@ -1,4 +1,6 @@
-# ArchLinux 输入法配置
+# ArchLinx 输入法配置
+
+本文主要介绍如何在hyprland中使用fcitx，其他 WM 中步骤大同小异。
 
 ## 安装
 
@@ -21,8 +23,6 @@ sudo pacman -S fcitx5-rime rime-double-pinyin
 
 ## 配置
 
-1.环境变量
-
 编辑 `/etc/environment` 文件配置环境变量：
 
 ```bash
@@ -32,7 +32,7 @@ SDL_IM_MODULE=fcitx
 XMODIFIERS=@im=fcitx
 ```
 
-2.美化
+## 美化
 
 克隆以下repo到本地
 
@@ -44,15 +44,19 @@ https://github.com/ayamir/fcitx5-gruvbox
 - 复制fcitx5-gruvbox中的 `Gruvbox-Dark` 到 `~/.local/share/fcitx5/themes/` 目录
 - 然后修改配置文件 `~/.config/fcitx5/conf/classicui.conf`
 
+添加下面的内容即可
+
 ```bash
 Theme=Gruvbox-Dark
 ```
+
+## 启用fcitx
 
 在 `hyprland.conf` 中添加下面的命令
 
 `exec-once = fcitx5 --replace -d`
 
-**重启后生效**
+**重启或注销后生效**
 
 ## rime
 
