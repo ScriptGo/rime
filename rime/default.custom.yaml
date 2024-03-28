@@ -60,9 +60,11 @@ patch:
     - { accept: bracketleft, when: paging, send: Page_Up } # "[" 上一页
     - { accept: bracketright, when: has_menu, send: Page_Down } # "]" 下一页
 
-    # 选词
-    - { accept: semicolon, send: 2, when: has_menu } # ";" 选第2项候选项
-    - { accept: apostrophe, send: 3, when: has_menu } # "'" 选第3项候选项
+    # 候选项操作
+    - { accept: semicolon, send: 2, when: has_menu } # ";"  选中第2个候选项
+    - { accept: apostrophe, send: 3, when: has_menu } # "'" 选中第3个候选项
+
+    # 
     - { accept: Shift+Tab, send: Shift+Left, when: composing } # 切换光标至下/上一个拼音
     - { accept: Tab, send: Shift+Right, when: composing } #
 
@@ -74,12 +76,12 @@ patch:
     - { accept: "Control+a", send: Home, when: composing } # 光标移至首
     - { accept: "Control+e", send: End, when: composing } # 光标移至尾
 
-    # 编辑
+    # 输入码操作
     - { accept: "Control+d", send: Delete, when: composing } #
     - { accept: "Control+k", send: "Shift+Delete", when: composing } #
     - { accept: "Control+h", send: BackSpace, when: composing } # 删除输入码
-    - { accept: "Control+g", send: Escape, when: composing } # 清码
-    - { accept: "Control+bracketleft", send: Escape, when: composing } # 回车清码
+    - { accept: "Control+g", send: Escape, when: composing } # 清空输入码
+    - { accept: "Control+bracketleft", send: Escape, when: composing } # 清空输入码
 
 
   # 切换
