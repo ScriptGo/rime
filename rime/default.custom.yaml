@@ -55,18 +55,21 @@ patch:
   # 快捷键
   key_binder/bindings:
     # 翻页
-    - { accept: minus, send: Page_Up, when: paging } # "-" 上一页
-    - { accept: equal, send: Page_Down, when: has_menu } # "=" 下一页
-    - { accept: bracketleft, when: paging, send: Page_Up } # "[" 上一页
-    - { accept: bracketright, when: has_menu, send: Page_Down } # "]" 下一页
+    # 上一页 "-" 或 "["
+    - { accept: minus, send: Page_Up, when: paging }
+    - { accept: bracketleft, when: paging, send: Page_Up }
+    # 下一页 "=" 或 "]"
+    - { accept: equal, send: Page_Down, when: has_menu }
+    - { accept: bracketright, when: has_menu, send: Page_Down }
 
     # 候选项操作
-    - { accept: semicolon, send: 2, when: has_menu } # ";"  选中第2个候选项
-    - { accept: apostrophe, send: 3, when: has_menu } # "'" 选中第3个候选项
+    # ; 选中第2个候选项, ' 选中第3个候选项
+    - { accept: semicolon, send: 2, when: has_menu }
+    - { accept: apostrophe, send: 3, when: has_menu }
 
-    # 
-    - { accept: Shift+Tab, send: Shift+Left, when: composing } # 切换光标至下/上一个拼音
-    - { accept: Tab, send: Shift+Right, when: composing } #
+    #  # 切换光标至下/上一个拼音
+    - { accept: Shift+Tab, send: Shift+Left, when: composing }
+    - { accept: Tab, send: Shift+Right, when: composing }
 
     # 移动
     - { accept: "Control+p", send: Up, when: composing } #
