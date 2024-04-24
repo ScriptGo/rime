@@ -217,48 +217,66 @@ Representational State Transfer	rest
 
 ################################################################################
 
-AI	ai
 人工智能	ai
+AI	ai
 Artificial Intelligence	ai
-AIGC	aigc
-人工智能生成内容	aigc
-AI Generated Content	aigc
-ANN	 ann
-人工神经网络	ann
-AGI agi
+
 通用人工智能    agi
+AGI agi
 Artificial General Intelligence agi
-Artificial Neural Network	ann
-CNN	cnn
-卷积神经网络	cnn
-Convolutional Neural Network	cnn
-DNN	dnn
-深度神经网络	dnn
-Deep Neural Networks	dnn
-GAN	gan
-生成对抗网络	gan
-Generative Adversarial Network	gan
-GPT gpt
-基于转换器的生成式预训练模型    gpt
-Generative pre-trained transformers gpt
-LLM	llm
-大型语言模型	llm
-Large Language Model	llm
-NN	nn
+
+人工智能生成内容	aigc
+AIGC	aigc
+AI Generated Content	aigc
+
 神经网络	nn
+NN	nn
 Neural Network	nn
+
+人工神经网络	ann
+ANN	 ann
+Artificial Neural Network	ann
+
+卷积神经网络	cnn
+CNN	cnn
+Convolutional Neural Network	cnn
+
+深度神经网络	dnn
+DNN	dnn
+Deep Neural Networks	dnn
+
+生成对抗网络	gan
+GAN	gan
+Generative Adversarial Network	gan
+
+循环神经网络    rnn
+RNN    rnn
+Recurrent Neural Network    rnn
+
+基于转换器的生成式预训练模型    gpt
+GPT gpt
+Generative pre-trained transformers gpt
+
+大型语言模型	llm
+LLM	llm
+Large Language Model	llm
+
 深度学习	dl
 Deep Learning	dl
+
 机器学习	ml
 Machine Learning	ml
+
 强化学习	rl
 Reinforcement Learning	rl
-Deepfake	df
+
 深度伪造	df
 深度造假	df
+Deepfake	df
 Deep learning fake	df
-NLP	nlp
+
 自然语言处理	nlp
+NLP	nlp
 Natural Language Processing	nlp
 
 ################################################################################
