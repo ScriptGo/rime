@@ -1,18 +1,18 @@
 # ArchLinx 输入法配置
 
-本文主要介绍如何在hyprland中使用fcitx-rime，其他 WM 中步骤大同小异。
+本文主要介绍如何在 hyprland 中使用 fcitx-rime，其他 WM 中步骤大同小异。
 
 ## rime
 
 此配置是针对 `小鹤双拼` 方案的，可以在此基础上进行修改。
 
-  | 配置文件             | 配置说明                         |
-  | -------------------- | ------------------------------|
-  | default.custom.yaml  | 输入方案、候选栏、快捷键等        |
-  | extended.dict.yaml   | 扩展词库                       |
-  | flypy.schema.ymal    | 自定义小鹤双拼方案               |
-  | symbols.custom.yaml  | 自定义标点符号                   |
-  | custom_phrase.txt    | 自定义短语                       |
+| 配置文件            | 配置说明                   |
+| ------------------- | -------------------------- |
+| default.custom.yaml | 输入方案、候选栏、快捷键等 |
+| extended.dict.yaml  | 扩展词库                   |
+| flypy.schema.ymal   | 自定义小鹤双拼方案         |
+| symbols.custom.yaml | 自定义标点符号             |
+| custom_phrase.txt   | 自定义短语                 |
 
 快速输入表情符号
 
@@ -31,8 +31,9 @@ symbols:
 
 ```bash
 import_tables:
-  # - luna_pinyin #默认词库,如需启用请取消注释
+  # - luna_pinyin  #默认词库,如需启用请取消注释
   - dicts/8105     # 字表
+  - dicts/41448    # 大字表
   - dicts/base     # 基础词库
   - dicts/ext      # 扩展词库
   - dicts/sogou    # 搜狗词向量（大词库，部署时间较长）
@@ -42,19 +43,19 @@ import_tables:
 
 ### 截图
 
-  正常输入
+正常输入
 
-  ![](./1.png)
+![](./1.png)
 
-  自定义短语
+自定义短语
 
-  ![](./2.png)
+![](./2.png)
 
-  自定义符号
+自定义符号
 
-  ![](./3.png)
+![](./3.png)
 
-  ![](./4.png)
+![](./4.png)
 
 ## 安装
 
@@ -72,12 +73,12 @@ sudo pacman -S fcitx5-rime rime-double-pinyin
 
 ## 配置
 
-1.克隆本仓库
+**克隆本仓库**
 
 - 将 fcitx5 文件夹复制到 `~/.config/` 目录下
-- 将 rime 文件夹复制到 `~/.local/share/fcitx5/` 目录下
+- 将 rime 和 themes 文件夹复制到 `~/.local/share/fcitx5/` 目录下
 
-2.配置环境变量
+**配置环境变量**
 
 编辑 `/etc/environment` 文件
 
@@ -90,22 +91,15 @@ XMODIFIERS=@im=fcitx
 
 ## 美化
 
-克隆以下仓库
+`themes` 文件夹内包含了主题
 
-```bash
-https://github.com/ayamir/fcitx5-nord.git
-https://github.com/ayamir/fcitx5-gruvbox.git
-```
+修改配置文件
 
-复制fcitx5-gruvbox中的 `Gruvbox-Dark` 到 `~/.local/share/fcitx5/themes/` 目录
+`~/.config/fcitx5/conf/classicui.conf`
 
-然后修改配置文件 `~/.config/fcitx5/conf/classicui.conf`
+添加主题名称即可
 
-添加如下内容
-
-```bash
-Theme=Gruvbox-Dark
-```
+`Theme=Gruvbox-Dark`
 
 ## 启用fcitx
 
@@ -117,5 +111,5 @@ Theme=Gruvbox-Dark
 
 ## 参考/致谢
 
-   1. [鼠须管配置 2021](https://placeless.net/blog/rime-squirrel-customization-2021)
-   2. [我的 Rime 配置 2022](https://dvel.me/posts/my-rime-setting-2022/)
+1.  [鼠须管配置 2021](https://placeless.net/blog/rime-squirrel-customization-2021)
+2.  [我的 Rime 配置 2022](https://dvel.me/posts/my-rime-setting-2022/)

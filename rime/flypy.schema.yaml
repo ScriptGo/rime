@@ -23,8 +23,7 @@ switches:
     reset: 1
 
 # 输入引擎
-# 只用简体中文，所以
-# 刪除 ascii_composer 和 abc_segmentor.
+# 只用简体中文，所以刪除 ascii_composer 和 abc_segmentor.
 engine:
   processors:
     - recognizer
@@ -42,17 +41,24 @@ engine:
   translators:
     - punct_translator
     - script_translator
-    - lua_translator@date_translator # 自定义 lua 脚本
-    - table_translator@custom_phrase # 自定义词库
+    - lua_translator@date_translator # 时间、日期、星期
+    - lua_translator@number_translator # 数字、金额大写
+    - lua_translator@lunar # 农历
+    - table_translator@custom_phrase # 自定义短语
+    - lua_translator@unicode # Unicode
 
   filters:
     - simplifier@emoji # emoji
     - uniquifier # 去重
 
-# 限制码长，默认 100。（最多能输入的字符个数）
-code_length_limit_processor: 100
+# 限制码长，默认100。（最多能输入的字符个数）
+code_length_limit_processor: 30
 
-# Lua 配置: 日期、时间、星期、ISO 8601、时间戳的触发关键字
+###############################################################################
+# Lua 配置
+###############################################################################
+
+# 快速输入日期时间
 date_translator:
   date: date # 日期： 2022-11-29
   time: time # 时间： 18:13
@@ -60,33 +66,31 @@ date_translator:
   datetime: datetime # ISO 8601： 2022-11-29T18:13:11+08:00
   timestamp: timestamp # 时间戳： 1669716794
 
-# 主翻译器，拼音
+# 快速输入农历年份
+lunar: lunar # 二〇二三年冬月二十 癸卯年（兔）冬月二十
+
+###############################################################################
+# 主翻译器
+# #############################################################################
 translator:
   dictionary: extended # 挂载词库 extended_dict.yaml
-  prism: flypy # 多方案共用一个词库时，为避免冲突，需要用 prism 指定一个名字
+  prism: flypy # 多方案共用一个词库时，为避免冲突，需要用 prism 指定一个名字。
+  initial_quality: 1.2 # 权重
+  enable_user_dict: true # 开启用户词典，根据用户输入调频
+  enable_encoder: true # 启用自动造词
+  enable_sentence: true # 启用自动句子输入
+  encode_commit_history: true # 对已上屏的词语进行自动编码以提高下次输入的命中率
   contextual_suggestions: true # 开启八股文
-  max_homophones: 7
+  max_homophones: 7 #
 
-# emoji
-emoji:
-  opencc_config: emoji.json
-  option_name: emoji
-  tips: all
+# #############################################################################
+# 标点符号和快捷键
+# #############################################################################
 
-# 自定义短语
-custom_phrase:
-  dictionary: ""
-  user_dict: custom_phrase # 需要手动创建 custom_phrase.txt 文件
-  db_class: stabledb
-  enable_completion: false # 禁止补全提示
-  enable_sentence: false # 禁止造句
-  initial_quality: 99 # custom_phrase 的权重
-
-# 标点符号
 # punctuator 下面有三个子项：
-#   full_shape 全角标点映射
-#   half_shape 半角标点映射
-#   symbols    Rime 的预设配置是以 '/' 前缀开头输出一系列字符，自定义的 symbols_caps_v.yaml 修改成了 'V' 开头。
+# full_shape 全角标点映射
+# half_shape 半角标点映射
+# symbols    Rime 的预设配置是以 '/' 前缀开头输出一系列字符
 
 # 预设的 punctuation.yaml 包含了 full_shape half_shape （全角和半角的符号映射）
 # 预设的 symbols.yaml     包含了 full_shape half_shape symbols
@@ -156,27 +160,23 @@ punctuator:
     "<": ["《", "〈", "«", "<"]
     ">": ["》", "〉", "»", ">"]
 
-# 从 default 继承快捷键
+# 快捷键
 key_binder:
-  import_preset: default # 从 default.yaml 继承通用的
-  # bindings:             # 也可以再增加方案专有的
-
-# 处理符合特定规则的输入码，如网址、反查
-recognizer:
+  # 从 default.yaml 继承通用的
   import_preset: default
-  patterns:
-    punct: "^/([0-9]0?|[A-Za-z]+)$" # 自定义，用来匹配自定义符号
-    email: "^[A-Za-z][-_.0-9A-Za-z]*@.*$" # 自带的，e-mail 正则
-    uppercase: "[A-Z][-_+.'0-9A-Za-z]*$" # 自带的，大写字母开头后，可以输入[-_+.'0-9A-Za-z]这些字符
-    url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]+[.].+$" # 自带的，URL 正则
-    unicode: "^U[a-f0-9]+" # 响应 Unicode
+  # 也可以再增加方案专有的
+  # bindings:
 
+###############################################################################
 # 拼写设定
+###############################################################################
 speller:
   # 如果不想让什么标点直接上屏，可以加在 alphabet，或者编辑标点符号为两个及以上的映射
-  alphabet: "zyxwvutsrqponmlkjihgfedcba"
-  initials: "zyxwvutsrqponmlkjihgfedcba"
-  delimiter: " '" # 第一位<空格>是拼音之间的分隔符；第二位<'>表示可以手动输入单引号来分割拼音。
+  alphabet: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA`
+  # 定义仅作为始码的按键，排除 ` 让单个的 ` 可以直接上屏
+  initials: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA
+  # 第一位<空格>是拼音之间的分隔符；第二位<'>表示可以手动输入单引号来分割拼音。
+  delimiter: " '"
   algebra:
     - erase/^xx$/
     - derive/^([jqxy])u$/$1v/
@@ -209,6 +209,41 @@ speller:
     - xform/in$/B/
     - xlit/QWRTYUIOPSDFGHJKLZXCVBNM/qwrtyuiopsdfghjklzxcvbnm/
     #- abbrev/^(.).+$/$1/ # 首字母简拼，开启后会导致 3 个字母时 kj'x 变成 k'jx 的问题
+
+# #############################################################################
+# 其他
+# #############################################################################
+
+# emoji
+emoji:
+  option_name: emoji
+  opencc_config: emoji.json
+  tips: all
+
+# custom_phrase
+custom_phrase:
+  dictionary: ""
+  user_dict: custom_phrase # 需要手动创建 custom_phrase.txt 文件
+  db_class: stabledb
+  enable_completion: false # 禁止补全提示
+  enable_sentence: false # 禁止造句
+  initial_quality: 99 # custom_phrase 的权重
+
+# 处理符合特定规则的输入码，如网址、反查
+recognizer:
+  import_preset: default
+  patterns:
+    # 匹配自定义符号
+    punct: "^/([0-9]0?|[A-Za-z]+)$"
+    # 匹配 e-mail
+    email: "^[A-Za-z][-_.0-9A-Za-z]*@.*$"
+    # 匹配 URL
+    url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]+[.].+$"
+    unicode: "^U[a-f0-9]+" # 响应 Unicode
+    # 响应 lua_translator@number_translator，数字金额大写
+    number: "^R[0-9]+[.]?[0-9]*"
+    # 响应 lua_translator@lunar，公历转农历，输入 N20240115 得到「二〇二三年腊月初五」
+    gregorian_to_lunar: "^N[0-9]{1,8}"
 
 # 导入八股文
 grammar:
