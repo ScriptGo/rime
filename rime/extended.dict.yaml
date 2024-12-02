@@ -3,19 +3,25 @@
 
 ---
 name: extended
-version: "2024-01-02"
+version: "2024-11-17"
 sort: by_weight
 
 # vocabulary: essay-zh-hans
-# use_preset_vocabulary: true
-
-use_preset_vocabulary: false # 禁用默认的“八股文”词库及词频系统,防止候选词中出现繁体字、方框字
+# 禁用默认的“八股文”词库及词频系统,防止候选词中出现繁体字、方框字
+use_preset_vocabulary: false
 
 import_tables:
-  - dicts/8105 # 字表
-  - dicts/41448 # 大字表
-  - dicts/base # 基础词库
-  - dicts/ext # 扩展词库
-  - dicts/sogou # 搜狗词向量（大词库，部署时间较长）
-  - dicts/tencent # 腾讯词向量（大词库，部署时间较长）
-  - dicts/others # 一些杂项
+  # 字表
+  - dicts/8105
+  # 大字表
+  - dicts/41448
+  # 基础词库
+  - dicts/base
+  # 扩展词库
+  - dicts/ext
+  # 搜狗词向量（大词库，部署时间较长）
+  - dicts/sogou
+  # 腾讯词向量（大词库，部署时间较长）
+  - dicts/tencent
+  # 一些杂项
+  - dicts/others

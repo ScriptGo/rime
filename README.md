@@ -4,7 +4,7 @@
 
 ## rime
 
-此配置是针对 `小鹤双拼` 方案的，可以在此基础上进行修改。
+**此配置是针对 `小鹤双拼` 方案的。**
 
 | 配置文件            | 配置说明                   |
 | ------------------- | -------------------------- |
@@ -14,24 +14,14 @@
 | symbols.custom.yaml | 自定义标点符号             |
 | custom_phrase.txt   | 自定义短语                 |
 
-快速输入表情符号
-
-```bash
-symbols:
-  "/emoji": [ 手势：/ss, 地球：/dq, 水果：/sg, 表情：/bq, emo：/em, 动物：/da, 天气：/tq, 音乐：/yy ]
-  "/sym": [ 符号：/fh, 标志：/bz, 电脑：/dn , 清单：/td, 节气：/jq, 单位：/dw, 标点：/bd, 拼音：/py, 货币：/hb ]
-  "/math": [ 数学：/sx, 数字：/0到/9, 分数：/fs, 括号：/kh, 星号：/xh, 方块：/fk, 几何：/jh, 箭头：/jt, 罗马数字：/lm, 大写罗马数字：/lmd, 拉丁：/ld, 上标：/sb, 下标：/xb, 希腊字母：/xl, 大写希腊字母：/xld ]
-```
-
 ### 词库
 
-**采用的是 [iDvel/rime-ice](https://github.com/iDvel/rime-ice) 的词库**
+**方案采用的是 [iDvel/rime-ice](https://github.com/iDvel/rime-ice) 的词库**
 
 如需添加或修改词库，编辑 `extended.dict.yaml` 文件即可
 
 ```bash
 import_tables:
-  # - luna_pinyin  #默认词库,如需启用请取消注释
   - dicts/8105     # 字表
   - dicts/41448    # 大字表
   - dicts/base     # 基础词库
@@ -59,13 +49,13 @@ import_tables:
 
 ## 安装
 
-1.安装fcitx5框架
+1.安装 fcitx5 框架
 
 ```bash
 sudo pacman -S fcitx5-im
 ```
 
-2.安装rime和双拼方案
+2.安装 rime 和双拼方案
 
 ```bash
 sudo pacman -S fcitx5-rime rime-double-pinyin
@@ -101,7 +91,7 @@ XMODIFIERS=@im=fcitx
 
 `Theme=Gruvbox-Dark`
 
-## 启用fcitx
+## 启用 fcitx
 
 在 `hyprland.conf` 中添加下面的命令
 
