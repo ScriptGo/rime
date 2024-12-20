@@ -1,0 +1,242 @@
+patch:
+  # 方案列表
+  schema_list:
+    - schema: flypy
+
+  # 候选菜单
+  menu:
+    # 候选项个数
+    page_size: 9
+    # 首尾衔接，轮回翻页
+    page_down_cycle: true
+    # 修改候选项标签
+    alternative_select_labels: [①, ②, ③, ④, ⑤, ⑥, ⑦, ⑧, ⑨]
+    # 空格或引号选第1项候选项，分号选选第2项候选项
+    # alternative_select_keys: "';"
+
+  # 方案切换
+  switcher:
+    caption: 〔方案切换〕
+    hotkeys:
+      - "Control+grave"
+    # 开关记忆（方案中的 switches）
+    # 从方案选单（而非快捷键）切换时会记住的选项，需要记忆的开关不能设定 reset
+    save_options:
+      - ascii_punct
+      - traditionalization
+      - emoji
+      - full_shape
+    # 呼出时是否折叠，多方案时建议折叠 true ，一个方案建议展开 false
+    fold_options: false
+    # 折叠时是否缩写选项
+    abbreviate_options: false
+    # 折叠时的选项分隔符
+    option_list_separator: " / "
+
+  # 中西文切换
+  #
+  # good_old_caps_lock:
+  # true   切换大写
+  # false  切换中英
+  # macOS 偏好设置的优先级更高，如果勾选【使用大写锁定键切换“ABC”输入法】则始终会切换输入法。
+  #
+  # 切换中英：
+  # 不同的选项表示：打字打到一半时按下了 CapsLock、Shift、Control 后：
+  # commit_text  上屏拼出的词句，然后切换到英文
+  # commit_code  上屏原始的编码，然后切换到英文
+  # clear        清除未上屏内容，然后切换到英文
+  # inline_ascii 切换到临时英文模式，按回车上屏后回到中文状态
+  # noop         屏蔽快捷键，啥也不干，但不要屏蔽 Caps
+  ascii_composer:
+   # 设置Caps键仅切换大小写
+    good_old_caps_lock: true
+    switch_key:
+      Shift_L: noop
+      Shift_R: noop
+      Control_L: noop
+      Control_R: noop
+      Caps_Lock: noop
+      Eisu_toggle: clear
+
+  # accept: 实际接受的按键, minus、equal,、period、comma、bracketleft、bracketright
+  # send: 按键输出效果, Page_Up(向上翻页), Page_Down(向下翻页), Escape(清空输入码)
+  # when: 作用范围, paging(翻页), has_menu(操作候选项用), composing(操作输入码用), always(全域)
+  # toggle: 切换开关
+
+  # 快捷键
+  key_binder/bindings:
+    # 翻页
+    # 上一页 "-" 或 "["
+    - { accept: minus, send: Page_Up, when: paging }
+    - { accept: bracketleft, when: paging, send: Page_Up }
+    # 下一页 "=" 或 "]"
+    - { accept: equal, send: Page_Down, when: has_menu }
+    - { accept: bracketright, when: has_menu, send: Page_Down }
+
+    # 候选项操作
+    # ; 选中第2个候选项, ' 选中第3个候选项
+    - { accept: semicolon, send: 2, when: has_menu }
+    - { accept: apostrophe, send: 3, when: has_menu }
+
+    #  # 切换光标至下/上一个拼音
+    - { accept: Shift+Tab, send: Shift+Left, when: composing }
+    - { accept: Tab, send: Shift+Right, when: composing }
+
+    # 移动
+    - { accept: "Control+p", send: Up, when: composing } #
+    - { accept: "Control+n", send: Down, when: composing } #
+    - { accept: "Control+b", send: Left, when: composing } # 移动光标
+    - { accept: "Control+f", send: Right, when: composing } # 向右选择候选词
+    - { accept: "Control+a", send: Home, when: composing } # 光标移至首
+    - { accept: "Control+e", send: End, when: composing } # 光标移至尾
+
+    # 输入码操作
+    - { accept: "Control+d", send: Delete, when: composing } #
+    - { accept: "Control+k", send: "Shift+Delete", when: composing } #
+    - { accept: "Control+h", send: BackSpace, when: composing } # 删除输入码
+    - { accept: "Control+g", send: Escape, when: composing } # 清空输入码
+    - { accept: "Control+bracketleft", send: Escape, when: composing } # 清空输入码
+
+
+    # 切换
+    # - { accept: "Control+Shift+1", select: .next, when: always }             # 切换输入方案
+    # - { accept: "Control+Shift+2", toggle: ascii_mode, when: always }        # 中/英文切换
+    # - { accept: "Control+Shift+3", toggle: full_shape, when: always }        # 全角/半角切换
+    # - { accept: "Control+Shift+4", toggle: traditionalization, when: always }# 繁简体切换
+    # - { accept: "Control+Shift+5", toggle: extended_charset, when: always }  # 通用/增广切换（显示生僻字）
+
+    # - { accept: "Control+Shift+exclam", select: .next, when: always }
+    # - { accept: "Control+Shift+at", toggle: ascii_mode, when: always }
+    # - { accept: "Control+Shift+numbersign", toggle: full_shape, when: always }
+    # - { accept: "Control+Shift+dollar", toggle: traditionalization, when: always }
+    # - { accept: "Control+Shift+percent", toggle: extended_charset, when: always }
+
+    # - { accept: "Shift+space", toggle: full_shape, when: always }
+    # - { accept: "Control+period", toggle: ascii_punct, when: always }
+
+    # 将小键盘 0~9 . 映射到主键盘，数字金额大写的 Lua 如 R1234.5678 可使用小键盘输入
+    - {accept: KP_0, send: 0, when: composing}
+    - {accept: KP_1, send: 1, when: composing}
+    - {accept: KP_2, send: 2, when: composing}
+    - {accept: KP_3, send: 3, when: composing}
+    - {accept: KP_4, send: 4, when: composing}
+    - {accept: KP_5, send: 5, when: composing}
+    - {accept: KP_6, send: 6, when: composing}
+    - {accept: KP_7, send: 7, when: composing}
+    - {accept: KP_8, send: 8, when: composing}
+    - {accept: KP_9, send: 9, when: composing}
+    - {accept: KP_Decimal, send: period, when: composing}
+
+# 按键速查
+# https://github.com/LEOYoon-Tsaw/Rime_collections/blob/master/Rime_description.md
+# （没有 Command 键，不支持）
+# accept 和 send 可用字段除 A-Za-z0-9 外，还包含以下键盘上实际有的键：
+# （区分大小写）
+# BackSpace	退格
+# Tab	水平定位符
+# Linefeed	换行
+# Clear	清除
+# Return	回车
+# Pause	暂停
+# Sys_Req	印屏
+# Escape	退出
+# Delete	删除
+# Home	原位
+# Left	左箭头
+# Up	上箭头
+# Right	右箭头
+# Down	下箭头
+# Prior、Page_Up	上翻
+# Next、Page_Down	下翻
+# End	末位
+# Begin	始位
+# Shift_L	左Shift
+# Shift_R	右Shift
+# Control_L	左Ctrl
+# Control_R	右Ctrl
+# Meta_L	左Meta
+# Meta_R	右Meta
+# Alt_L	左Alt
+# Alt_R	右Alt
+# Super_L	左Super
+# Super_R	右Super
+# Hyper_L	左Hyper
+# Hyper_R	右Hyper
+# Caps_Lock	大写锁
+# Shift_Lock	上档锁
+# Scroll_Lock	滚动锁
+# Num_Lock	小键板锁
+# Select	选定
+# Print	打印
+# Execute	运行
+# Insert	插入
+# Undo	还原
+# Redo	重做
+# Menu	菜单
+# Find	搜寻
+# Cancel	取消
+# Help	帮助
+# Break	中断
+# space	空格
+# exclam	!
+# quotedbl	"
+# numbersign	#
+# dollar	$
+# percent	%
+# ampersand	&
+# apostrophe	'
+# parenleft	(
+# parenright	)
+# asterisk	*
+# plus	+
+# comma	,
+# minus	-
+# period	.
+# slash	/
+# colon	:
+# semicolon	;
+# less	<
+# equal	=
+# greater	>
+# question	?
+# at	@
+# bracketleft	[
+# backslash	\
+# bracketright	]
+# asciicircum	^
+# underscore	_
+# grave	`
+# braceleft	{
+# bar	|
+# braceright	}
+# asciitilde	~
+# KP_Space	小键板空格
+# KP_Tab	小键板水平定位符
+# KP_Enter	小键板回车
+# KP_Delete	小键板删除
+# KP_Home	小键板原位
+# KP_Left	小键板左箭头
+# KP_Up	小键板上箭头
+# KP_Right	小键板右箭头
+# KP_Down	小键板下箭头
+# KP_Prior、KP_Page_Up	小键板上翻
+# KP_Next、KP_Page_Down	小键板下翻
+# KP_End	小键板末位
+# KP_Begin	小键板始位
+# KP_Insert	小键板插入
+# KP_Equal	小键板等于
+# KP_Multiply	小键板乘号
+# KP_Add	小键板加号
+# KP_Subtract	小键板减号
+# KP_Divide	小键板除号
+# KP_Decimal	小键板小数点
+# KP_0	小键板0
+# KP_1	小键板1
+# KP_2	小键板2
+# KP_3	小键板3
+# KP_4	小键板4
+# KP_5	小键板5
+# KP_6	小键板6
+# KP_7	小键板7
+# KP_8	小键板8
+# KP_9	小键板9

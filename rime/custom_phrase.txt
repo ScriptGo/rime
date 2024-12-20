@@ -1,0 +1,300 @@
+# Rime table
+# coding: utf-8
+#@/db_name  custom_phrase.txt
+#@/db_type	tabledb
+#
+# 自定义文本
+# 适用于全拼，在方案的 custom_phrase/user_dict 指定；
+# 双拼默认为 custom_phrase_double.txt 需要手动创建
+# 码表各字段以制表符（Tab）分隔
+# 顺序为：汉字<Tab>编码<Tab>权重（决定重码的次序、可选）
+
+################################################################################
+# 英文缩写
+
+BTW	btw
+顺便说一句		btw
+顺带一提	btw
+by the way	btw
+
+BDFL	bdfl
+终身仁慈独裁者	bdfl
+Benevolent Dictator For Life	bdfl
+
+BCC	bcc
+隐秘抄送	bcc
+blind carbon copy	bcc
+
+CC	cc
+抄送	cc
+carbon copy	cc
+
+CES	ces
+消费电子展		ces
+Consumer Electronics Show	ces
+
+Deadline    ddl
+截止日期    ddl
+最终期限    ddl
+
+DIY	diy
+自己动手做		diy
+亲力亲为	diy
+Do It Yourself	diy
+
+DRY	dry
+不要重复你自己	dry
+Don't repeat yourself	dry
+
+FYI	fyi
+供你参考	fyi
+仅供参考	fyi
+For Your Information	fyi
+
+FAQ	faq
+常见问题	faq
+Frequently Asked Question	faq
+
+GDPR	gdpr
+通用数据保护条例	gdpr
+General Data Protection Regulation	gdpr
+
+NSFW	nsfw
+不适于工作场所	nsfw
+Not Safe For Work	nsfw
+
+OOO	ooo
+不在办公室		ooo
+没上班	ooo
+Out of Office	ooo
+
+PS	ps
+附言	ps
+Photoshop	ps
+PostScript	ps
+
+PTSD	ptsd
+创伤后应激障碍	ptsd
+Post-traumatic stress disorder	ptsd
+
+R.I.P.	rip
+安息	rip
+Requiescat in pace	rip
+Rest in peace	rip
+
+TBD	tbd
+待决定	tbd
+待商议	tbd
+To Be Determined	tbd
+
+TL;DR	tldr
+tl;dr	tldr
+太长不看	tldr
+长话短说	tldr
+too long; didn't read	tldr
+
+UGC	ugc
+用户创造内容	ugc
+user-generated content	ugc
+user-generated cumber	ugc
+用户创造麻烦	ugc
+
+VIP	vip
+贵宾	vip
+Very Important Person	vip
+
+################################################################################
+
+⌘	cmd
+⌃	ctl
+⌥	opt
+⇧	shift
+↩︎	enter
+⇥	tab
+
+OS	os
+Android	and
+Windows	win
+Linux	lin
+Unix	uni
+iOS	ios
+
+API	api
+应用程序接口	api
+application programming interface	api
+
+Creative Commons	cc
+知识共享	cc
+CC BY-SA 3.0	cc
+
+CRUD	crud
+增删查改	crud
+创读更删	crud
+
+CLI	cli
+命令行用户界面	cli
+Command Line Interface	cli
+
+DSL	dsl
+领域特定语言	dsl
+domain-specific language	dsl
+
+HTTP	http
+HTTPS	http
+超文本传输协议	http
+Hyper Text Transfer Protocol	http
+Hyper Text Transfer Protocol over Secure Socket Layer	http
+
+SDK	sdk
+软件开发工具包	SDK
+Software Development Kit	SDK
+
+IDE	ide
+集成开发环境	IDE
+Integrated Development Environment	IDE
+
+KISS	kiss
+Keep It Simple, Stupid	kiss
+
+GPL	gpl
+GNU通用公共许可协议	gpl
+GNU General Public License	gpl
+
+GNU	gnu
+GNU's Not Unix	gnu
+
+GTD	gtd
+搞定	gtd
+Getting Things Done	gtd
+
+GUI	gui
+图形用户界面	gui
+Graphical User Interface	gui
+
+TUI	tui
+终端用户界面	tui
+Terminal User Interface	tui
+基于文本的用户界面	tui
+Text-based User Interface	tui
+
+SLOC	sloc
+源代码行数		sloc
+Source lines of code	sloc
+
+LOC	loc
+程序行数	loc
+lines of code	loc
+
+LSP	lsp
+语言服务器协议	lsp
+Language Server Protocol	lsp
+
+REPL	repl
+读取-求值-输出 循环	repl
+Read-Eval-Print Loop	repl
+
+URI	uri
+统一资源标志符	uri
+Uniform Resource Identifier	uri
+
+URN	urn
+统一资源名称	urn
+Uniform Resource Name	urn
+
+URL	url
+统一资源定位符	url
+Uniform Resource Locator	url
+
+RFC	rfc
+请求意见稿		rfc
+意见征求	rfc
+请求评论	rfc
+Request for Comments	rfc
+
+REST	rest
+表现层状态转换	rest
+Representational State Transfer	rest
+
+################################################################################
+
+人工智能	ai
+AI	ai
+Artificial Intelligence	ai
+
+通用人工智能    agi
+AGI agi
+Artificial General Intelligence agi
+
+人工智能生成内容	aigc
+AIGC	aigc
+AI Generated Content	aigc
+
+神经网络	nn
+NN	nn
+Neural Network	nn
+
+人工神经网络	ann
+ANN	 ann
+Artificial Neural Network	ann
+
+卷积神经网络	cnn
+CNN	cnn
+Convolutional Neural Network	cnn
+
+深度神经网络	dnn
+DNN	dnn
+Deep Neural Networks	dnn
+
+生成对抗网络	gan
+GAN	gan
+Generative Adversarial Network	gan
+
+循环神经网络    rnn
+RNN    rnn
+Recurrent Neural Network    rnn
+
+基于转换器的生成式预训练模型    gpt
+GPT gpt
+Generative pre-trained transformers gpt
+
+大型语言模型	llm
+LLM	llm
+Large Language Model	llm
+
+深度学习	dl
+Deep Learning	dl
+
+机器学习	ml
+Machine Learning	ml
+
+强化学习	rl
+Reinforcement Learning	rl
+
+深度伪造	df
+深度造假	df
+Deepfake	df
+Deep learning fake	df
+
+自然语言处理	nlp
+NLP	nlp
+Natural Language Processing	nlp
+
+################################################################################
+
+EDA	eda
+Exploratory Data Analysis	eda
+探索性数据分析	eda
+
+PoC	poc
+概念验证	poc
+为观点提供证据	poc
+Proof of concept	poc
+
+################################################################################
+Rime	rime
+中州韻輸入法引擎	rime
+鼠须管	rime
+Rime Input Method Engine	rime
+https://rime.im/	rime
+Squirrel	rime
+又双叒叕	yyy

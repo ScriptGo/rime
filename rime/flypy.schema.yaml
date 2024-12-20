@@ -1,0 +1,397 @@
+# Rime schema
+# encoding: utf-8
+
+# 方案说明
+schema:
+  schema_id: flypy
+  name: 小鹤双拼
+  description: |
+    小鹤双拼自定义方案
+
+# 功能开关
+# states: 方案选单显示的名称。可以注释掉，仍可以通过快捷键切换。
+# reset: 默认状态。 注释掉后，切换窗口时不会重置到默认状态。
+switches:
+  - name: ascii_mode
+    states: [中, En]
+  # 中英标点符号
+  - name: ascii_punct
+    states: [¥, $]
+  # 简繁输入法
+  - name: traditionalization
+    states: [简体, 繁体]
+  # emoji
+  - name: emoji
+    states: ["🈚️️\uFE0F", "️🈶️\uFE0E"]
+    reset: 1
+  # 半角全角符号
+  - name: full_shape
+    states: [半角, 全角]
+
+# 输入引擎
+engine:
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+
+  translators:
+    - punct_translator
+    - script_translator
+    # 自定义短语
+    - table_translator@custom_phrase
+    # 时间、日期、星期
+    - lua_translator@*date_translator
+    # 数字、金额大写
+    - lua_translator@*number_translator
+    # 农历
+    - lua_translator@*lunar
+    # Unicode
+    - lua_translator@*unicode
+    # 计算器
+    - lua_translator@*calculator
+    # 暴力 GC
+    - lua_translator@*force_gc
+
+  filters:
+    # 错音错字提示
+    - lua_filter@*corrector
+    # emoji
+    - simplifier@emoji
+    # 简繁切换
+    - simplifier@traditionalize
+    # 去重
+    - uniquifier
+
+###############################################################################
+# speller
+###############################################################################
+
+speller:
+  # 如果不想让什么标点直接上屏，可以加在 alphabet，或者编辑标点符号为两个及以上的映射
+  alphabet: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA`
+  # 定义仅作为始码的按键，排除 ` 让单个的 ` 可以直接上屏
+  initials: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA
+  # 第一位<空格>是拼音之间的分隔符；第二位<'>表示可以手动输入单引号来分割拼音。
+  delimiter: " '"
+  algebra:
+    #  - erase/^xx$/
+    #  - derive/^([jqxy])u$/$1v/
+    #  - derive/^([aoe])([ioun])$/$1$1$2/
+    #  - xform/^([aoe])(ng)?$/$1$1$2/
+    #  - xform/iu$/Q/
+    #  - xform/(.)ei$/$1W/
+    #  - xform/uan$/R/
+    #  - xform/[uv]e$/T/
+    #  - xform/un$/Y/
+    #  - xform/^sh/U/
+    #  - xform/^ch/I/
+    #  - xform/^zh/V/
+    #  - xform/uo$/O/
+    #  - xform/ie$/P/
+    #  - xform/i?ong$/S/
+    #  - xform/ing$|uai$/K/
+    #  - xform/(.)ai$/$1D/
+    #  - xform/(.)en$/$1F/
+    #  - xform/(.)eng$/$1G/
+    #  - xform/[iu]ang$/L/
+    #  - xform/(.)ang$/$1H/
+    #  - xform/ian$/M/
+    #  - xform/(.)an$/$1J/
+    #  - xform/(.)ou$/$1Z/
+    #  - xform/[iu]a$/X/
+    #  - xform/iao$/N/
+    #  - xform/(.)ao$/$1C/
+    #  - xform/ui$/V/
+    #  - xform/in$/B/
+    #  - xlit/QWRTYUIOPSDFGHJKLZXCVBNM/qwrtyuiopsdfghjklzxcvbnm/
+    - erase/^xx$/
+    - derive/^([jqxy])u$/$1v/
+    - derive/^([aoe])([ioun])$/$1$1$2/
+    - xform/^([aoe])(ng)?$/$1$1$2/
+    - xform/iu$/Ⓠ/
+    - xform/(.)ei$/$1Ⓦ/
+    - xform/uan$/Ⓡ/
+    - xform/[uv]e$/Ⓣ/
+    - xform/un$/Ⓨ/
+    - xform/^sh/Ⓤ/
+    - xform/^ch/Ⓘ/
+    - xform/^zh/Ⓥ/
+    - xform/uo$/Ⓞ/
+    - xform/ie$/Ⓟ/
+    - xform/(.)i?ong$/$1Ⓢ/
+    - xform/ing$|uai$/Ⓚ/
+    - xform/(.)ai$/$1Ⓓ/
+    - xform/(.)en$/$1Ⓕ/
+    - xform/(.)eng$/$1Ⓖ/
+    - xform/[iu]ang$/Ⓛ/
+    - xform/(.)ang$/$1Ⓗ/
+    - xform/ian$/Ⓜ/
+    - xform/(.)an$/$1Ⓙ/
+    - xform/(.)ou$/$1Ⓩ/
+    - xform/[iu]a$/Ⓧ/
+    - xform/iao$/Ⓝ/
+    - xform/(.)ao$/$1Ⓒ/
+    - xform/ui$/Ⓥ/
+    - xform/in$/Ⓑ/
+    - xlit/ⓆⓌⓇⓉⓎⓊⒾⓄⓅⓈⒹⒻⒼⒽⒿⓀⓁⓏⓍⒸⓋⒷⓃⓂ/qwrtyuiopsdfghjklzxcvbnm/
+    #- abbrev/^(.).+$/$1/ # 首字母简拼，开启后会导致 3 个字母时 kj'x 变成 k'jx 的问题
+
+###############################################################################
+# translator
+###############################################################################
+
+translator:
+  # 挂载词库 extended_dict.yaml
+  dictionary: extended
+  # 多方案共用一个词库时，为避免冲突，需要用 prism 指定一个名字。
+  prism: flypy
+  # 权重
+  initial_quality: 1.2
+  # 是否使用语言模型优化输出结果〔需配合 grammar 使用〕
+  # contextual_suggestions: true
+  # 最大同音簇长度〔需配合 grammar 使用〕
+  # max_homophones: 7
+  # 最大同形簇长度〔需配合 grammar 使用〕
+  # max_hompgraphs: 7
+  # 是否开启用户词典〔用户词典记录动态字词频、用户词〕
+  # enable_user_dict: true
+  # 是否开启自动造句
+  # enable_sentence: true
+  # corrector.lua ：为了让错音错字提示的 Lua 同时适配全拼双拼，将拼音显示在 comment 中
+  spelling_hints: 8
+  # corrector.lua ：Rime 默认在 preedit 等于 comment 时取消显示 comment，这里强制一直显示，供 corrector.lua 做判断用。
+  always_show_comments: true
+  # 标记拼音注释，供 corrector.lua 做判断用
+  comment_format:
+    - xform/^/［/
+    - xform/$/］/
+  # preedit_format 影响到输入框的显示和“Shift+回车”上屏的字符
+  preedit_format:
+    - xform/([bpmfdtnljqx])n/$1iao/
+    - xform/(\w)g/$1eng/
+    - xform/(\w)q/$1iu/
+    - xform/(\w)w/$1ei/
+    - xform/([dtnlgkhjqxyvuirzcs])r/$1uan/
+    - xform/(\w)t/$1ve/
+    - xform/(\w)y/$1un/
+    - xform/([dtnlgkhvuirzcs])o/$1uo/
+    - xform/(\w)p/$1ie/
+    - xform/([jqx])s/$1iong/
+    - xform/(\w)s/$1ong/
+    - xform/(\w)d/$1ai/
+    - xform/(\w)f/$1en/
+    - xform/(\w)h/$1ang/
+    - xform/(\w)j/$1an/
+    - xform/([gkhvuirzcs])k/$1uai/
+    - xform/(\w)k/$1ing/
+    - xform/([jqxnlb])l/$1iang/
+    - xform/(\w)l/$1uang/
+    - xform/(\w)z/$1ou/
+    - xform/([gkhvuirzcs])x/$1ua/
+    - xform/(\w)x/$1ia/
+    - xform/(\w)c/$1ao/
+    - xform/([dtgkhvuirzcs])v/$1ui/
+    - xform/(\w)b/$1in/
+    - xform/(\w)m/$1ian/
+    - xform/([aoe])\1(\w)/$1$2/
+    - "xform/(^|[ '])v/$1zh/"
+    - "xform/(^|[ '])i/$1ch/"
+    - "xform/(^|[ '])u/$1sh/"
+    - xform/([jqxy])v/$1u/
+    - xform/([nl])v/$1ü/
+    - xform/ü/v/ # ü 显示为 v
+
+# 自定义短语
+custom_phrase:
+  dictionary: ""
+  # 用户词典(需要手动创建)
+  user_dict: custom_phrase
+  # 用户词典类型: tabledb〔文本〕或 userdb〔二进制〕
+  db_class: stabledb
+  # 是否开启自动造词
+  enable_encoder: false
+  # 提前显示尚未输入完整码的字
+  enable_completion: false
+  # 是否对已上屛词自动成词
+  encode_commit_history: false
+  # table_translator 出字优先级
+  initial_quality: 99
+
+# emoji
+emoji:
+  option_name: emoji
+  opencc_config: emoji.json
+  # 在 corrector.lua 及反查中，emoji 返回空注释
+  inherit_comment: false
+
+# 简繁切换
+traditionalize:
+  option_name: traditionalization
+  # s2t.json | s2hk.json | s2tw.json | s2twp.json
+  opencc_config: s2t.json
+  # 转换提示: all 都显示 | char 仅单字显示 | none 不显示。
+  tips: none
+  # 限制在对应 tag，不对其他如反查的内容做简繁转换
+  tags: [abc, number, gregorian_to_lunar]
+
+###############################################################################
+# 语言模型(https://github.com/amzxyz/RIME-LMDG)
+###############################################################################
+
+# grammar:
+#   language: amz-v2n3m1-zh-hans
+#   # 最大搭配长度（整句输入可忽略此项)
+#   collocation_max_length: 5
+#   # 最小搭配长度（整句输入可忽略此项）
+#   collocation_mix_length: 2
+
+###############################################################################
+# punctuator
+###############################################################################
+
+# punctuator 下面有三个子项：
+# full_shape 全角标点映射
+# half_shape 半角标点映射
+# symbols    Rime 的预设配置是以 '/' 前缀开头输出一系列字符
+
+# 预设的 punctuation.yaml 包含了 full_shape half_shape
+# 预设的 symbols.yaml     包含了 full_shape half_shape symbols
+punctuator:
+  # 导入自定义符号
+  import_preset: symbols.custom
+  symbols:
+    "/emoji":
+      [
+        手势：/ss,
+        地球：/dq,
+        水果：/sg,
+        表情：/bq,
+        emo：/em,
+        动物：/da,
+        天气：/tq,
+        音乐：/yy,
+      ]
+    "/sym":
+      [
+        符号：/fh,
+        标志：/bz,
+        电脑：/dn,
+        清单：/td,
+        节气：/jq,
+        单位：/dw,
+        标点：/bd,
+        拼音：/py,
+        货币：/hb,
+      ]
+    "/math":
+      [
+        数学：/sx,
+        数字：/0到/9,
+        分数：/fs,
+        括号：/kh,
+        星号：/xh,
+        方块：/fk,
+        几何：/jh,
+        箭头：/jt,
+        罗马数字：/lm,
+        大写罗马数字：/lmd,
+        拉丁：/ld,
+        上标：/sb,
+        下标：/xb,
+        希腊字母：/xl,
+        大写希腊字母：/xld,
+      ]
+  half_shape:
+    "#": "#"
+    "*": "*"
+    "%": "%"
+    "^": "^"
+    "`": "`"
+    "~": "~"
+    "@": "@"
+    "=": "="
+    "/": ["/", "/", "÷"]
+    "|": ["|", "｜", "·", "・", "§", "¦", "‖", "︴"]
+    '\': "、"
+    "_": "_"
+    "'": { pair: ["「", "」"] }
+    "[": ["【", "〔", "［"]
+    "]": ["】", "〕", "］"]
+    "{": "{"
+    "}": "}"
+    "$": ["¥", "$", "€", "£", "¢", "¤"]
+    "<": ["《", "〈", "«", "<"]
+    ">": ["》", "〉", "»", ">"]
+
+# 快捷键
+key_binder:
+  # 从 default.yaml 继承通用的
+  import_preset: default
+  # 也可以再增加方案专有的
+  # bindings:
+
+###############################################################################
+# Lua 配置
+###############################################################################
+
+# date_translator : 快速输入日期时间
+date_translator:
+  # 日期： 2022-11-29
+  date: date
+  # 时间： 18:13
+  time: time
+  # 星期： 星期二
+  week: week
+  # ISO 8601： 2022-11-29T18:13:11+08:00
+  datetime: datetime
+  # 时间戳： 1669716794
+  timestamp: timestamp
+
+# lunar : 快速输入农历年份
+# 二〇二三年冬月二十 癸卯年（兔）冬月二十
+lunar: lunar
+
+# corrector ：为 corrector 格式化 comment，占位符为 {comment}
+# 默认 "{comment}" 输入 hun dun 时会在「馄饨」旁边生成 hún tun 的 comment
+# 例如左右加个括号 "({comment})" 就会变成 (hún tun)
+corrector: "{comment}"
+
+# calculator : 计算器触发关键字
+calculator:
+  trigger: V
+
+###############################################################################
+# recognizer
+###############################################################################
+
+# 处理符合特定规则的输入码，如网址、反查
+recognizer:
+  import_preset: default
+  patterns:
+    # 匹配自定义符号
+    punct: "^/([0-9]0?|[A-Za-z]+)$"
+    # 匹配 e-mail
+    email: "^[A-Za-z][-_.0-9A-Za-z]*@.*$"
+    # 匹配 URL
+    url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]+[.].+$"
+    # 数字金额大写
+    number: "^R[0-9]+[.]?[0-9]*"
+    # 公历转农历，输入 N20240115 得到「二〇二三年腊月初五」
+    gregorian_to_lunar: "^N[0-9]{1,8}"
+    # Unicode
+    unicode: "^U[a-f0-9]+"
+    # 计算器
+    calculator: "^V.*$"
