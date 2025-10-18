@@ -10,7 +10,7 @@
 | symbols.custom.yaml | 表情、标点符号             |
 | custom_phrase.txt   | 自定义短语                 |
 
-**此配置是针对 `小鹤双拼` 的，词库采用的是 [iDvel/rime-ice](https://github.com/iDvel/rime-ice) 的词库**
+**此配置是针对 `小鹤双拼` 的，词库采用的是 [iDvel/rime-ice](https://github.com/iDvel/rime-ice)**。
 
 ## 安装
 
