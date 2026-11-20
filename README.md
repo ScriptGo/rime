@@ -10,7 +10,7 @@
 | symbols.custom.yaml | 表情、标点符号             |
 | custom_phrase.txt   | 自定义短语                 |
 
-**此配置是针对 `小鹤双拼` 的，词库采用的是 [iDvel/rime-ice](https://github.com/iDvel/rime-ice)**。
+**此配置仅适用于 `小鹤双拼` ，如有需要请自行修改！ 词库取自 [iDvel/rime-ice](https://github.com/iDvel/rime-ice)**。
 
 ## 安装
 
@@ -30,15 +30,14 @@ sudo pacman -S fcitx5-rime rime-double-pinyin
 
 **1.克隆本仓库**
 
-- 将 fcitx5 复制到 `~/.config/` 目录下
-- 将 rime 和 themes 复制到 `~/.local/share/fcitx5/` 目录下
+- 将 fcitx5 复制到 `~/.config/` 目录
+- 将 rime 和 themes 复制到 `~/.local/share/fcitx5/` 目录
 
 **2.配置环境变量**
 
 编辑 `/etc/environment` 文件
 
 ```bash
-GTK_IM_MODULE=fcitx
 QT_IM_MODULE=fcitx
 SDL_IM_MODULE=fcitx
 XMODIFIERS=@im=fcitx
@@ -58,13 +57,20 @@ XMODIFIERS=@im=fcitx
 
 ## 启用 fcitx
 
-在 `hyprland.conf` 中添加下面的命令
+在 `hyprland.lua` 中添加如下面的命令
 
-`exec-once = fcitx5 --replace -d`
+```lua
+hl.on("hyprland.start", function ()
+    hl.exec_cmd("fcitx5 -d")
+end)
+```
 
 **注销或重启系统后生效**
 
 ## 参考/致谢
 
-1.  [鼠须管配置 2021](https://placeless.net/blog/rime-squirrel-customization-2021)
-2.  [我的 Rime 配置 2022](https://dvel.me/posts/my-rime-setting-2022/)
+1. [鼠须管配置 2021](https://placeless.net/blog/rime-squirrel-customization-2021)
+2. [我的 Rime 配置 2022](https://dvel.me/posts/my-rime-setting-2022/)
+3. [Gruvbox](https://github.com/ayamir/fcitx5-gruvbox)
+4. [Nord](https://github.com/ayamir/fcitx5-nord)
+5. [Mintimate](https://github.com/Mintimate/oh-my-rime)
