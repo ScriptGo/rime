@@ -57,7 +57,7 @@ XMODIFIERS=@im=fcitx
 
 ## 启用 fcitx
 
-在 `hyprland.lua` 中添加如下面的命令
+在 `hyprland.lua` 中添加如下命令
 
 ```lua
 hl.on("hyprland.start", function ()
